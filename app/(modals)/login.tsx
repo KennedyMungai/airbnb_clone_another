@@ -4,11 +4,11 @@ import { useWarmUpBrowser } from '@/hooks/useWarmUpBrowser'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import {
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+	StyleSheet,
+	Text,
+	TextInput,
+	TouchableOpacity,
+	View
 } from 'react-native'
 
 const LoginModal = () => {
@@ -42,11 +42,29 @@ const LoginModal = () => {
 				/>
 			</View>
 
-			<View>
-				<TouchableOpacity style={[styles.btnOutline, { gap: 16 }]}>
+			<View style={{ gap: 24 }}>
+				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
 					<Ionicons name='call-outline' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Phone
+					</Text>
+				</TouchableOpacity>
+				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+					<Ionicons name='logo-apple' size={24} />
+					<Text style={styles.btnOutlineText}>
+						Continue With Apple
+					</Text>
+				</TouchableOpacity>
+				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+					<Ionicons name='logo-facebook' size={24} />
+					<Text style={styles.btnOutlineText}>
+						Continue With Facebook
+					</Text>
+				</TouchableOpacity>
+				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+					<Ionicons name='logo-google' size={24} />
+					<Text style={styles.btnOutlineText}>
+						Continue With Google
 					</Text>
 				</TouchableOpacity>
 			</View>
