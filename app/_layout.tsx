@@ -71,6 +71,7 @@ function RootLayoutNav() {
 				}}
 			/>
       <Stack.Screen name="listing/[id]" />
+      <Stack.Screen name="(modals)/booking" options={{presentation: 'modal', animation: 'slide_from_bottom'}} />
 		</Stack>
 	)
 }
