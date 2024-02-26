@@ -1,5 +1,9 @@
 import Colors from '@/constants/Colors'
-import { Ionicons } from '@expo/vector-icons'
+import {
+	FontAwesome5,
+	Ionicons,
+	MaterialCommunityIcons
+} from '@expo/vector-icons'
 import { Tabs } from 'expo-router'
 import React from 'react'
 
@@ -42,16 +46,39 @@ const TabsLayout = () => {
 				options={{
 					tabBarLabel: 'Trips',
 					headerTitle: 'Trips',
-					title: 'Trips'
+					title: 'Trips',
+					tabBarIcon: ({ color, size }) => (
+						<FontAwesome5 name='airbnb' size={size} color={color} />
+					)
 				}}
 			/>
 			<Tabs.Screen
 				name='inbox'
-				options={{ tabBarLabel: 'Inbox', headerTitle: 'Inbox' }}
+				options={{
+					tabBarLabel: 'Inbox',
+					headerTitle: 'Inbox',
+					tabBarIcon: ({ color, size }) => (
+						<MaterialCommunityIcons
+							name='message-outline'
+							size={size}
+							color={color}
+						/>
+					)
+				}}
 			/>
 			<Tabs.Screen
 				name='profile'
-				options={{ tabBarLabel: 'Profile', headerTitle: 'Profile' }}
+				options={{
+					tabBarLabel: 'Profile',
+					headerTitle: 'Profile',
+					tabBarIcon: ({ color, size }) => (
+						<Ionicons
+							name='person-circle'
+							color={color}
+							size={size}
+						/>
+					)
+				}}
 			/>
 		</Tabs>
 	)
