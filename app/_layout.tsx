@@ -54,6 +54,7 @@ function RootLayoutNav() {
 			<Stack.Screen
 				name='(modals)/login'
 				options={{
+					headerTitle: 'Log In or Sign up',
 					presentation: 'modal',
 					animation: 'slide_from_bottom'
 				}}
