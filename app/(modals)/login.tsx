@@ -3,6 +3,7 @@ import { defaultStyles } from '@/constants/Styles'
 import { useWarmUpBrowser } from '@/hooks/useWarmUpBrowser'
 import { useOAuth } from '@clerk/clerk-expo'
 import { Ionicons } from '@expo/vector-icons'
+import { useRouter } from 'expo-router'
 import React from 'react'
 import {
     StyleSheet,
@@ -21,6 +22,8 @@ enum Strategy {
 const LoginModal = () => {
 	useWarmUpBrowser()
 
+	const router = useRouter()
+
 	const { startOAuthFlow: appleAuth } = useOAuth({
 		strategy: 'oauth_apple'
 	})
@@ -31,7 +34,25 @@ const LoginModal = () => {
 		strategy: 'oauth_google'
 	})
 
-	const onSelectAuth = async (strategy: Strategy) => {}
+	const onSelectAuth = async (strategy: Strategy) => {
+		const selectedAuth = {
+			[Strategy.Google]: googleAuth,
+			[Strategy.Apple]: appleAuth,
+			[Strategy.Facebook]: facebookAuth
+		}[strategy]
+
+		try {
+			const { createdSessionId, setActive } = await selectedAuth()
+
+			if (createdSessionId) {
+				setActive!({ session: createdSessionId })
+			}
+
+			router.back()
+		} catch (error: any) {
+			console.error(error.message)
+		}
+	}
 
 	return (
 		<View style={styles.container}>
