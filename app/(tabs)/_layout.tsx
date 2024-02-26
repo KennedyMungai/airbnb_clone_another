@@ -1,4 +1,5 @@
 import Colors from '@/constants/Colors'
+import { FontAwesome5 } from '@expo/vector-icons'
 import { Tabs } from 'expo-router'
 import React from 'react'
 
@@ -7,14 +8,20 @@ const TabsLayout = () => {
 		<Tabs
 			screenOptions={{
 				tabBarActiveTintColor: Colors.primary,
-                tabBarLabelStyle: {
-                    fontFamily: 'mon-sb'
-                }
+				tabBarLabelStyle: {
+					fontFamily: 'mon-sb'
+				}
 			}}
 		>
 			<Tabs.Screen
 				name='index'
-				options={{ tabBarLabel: 'Explore', headerTitle: 'Explore' }}
+				options={{
+					tabBarLabel: 'Explore',
+					headerTitle: 'Explore',
+					tabBarIcon: ({ color, size }) => (
+						<FontAwesome5 name='search' size={20} />
+					)
+				}}
 			/>
 			<Tabs.Screen
 				name='wishlists'
