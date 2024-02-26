@@ -5,7 +5,7 @@ const TabsLayout = () => {
 	return (
 		<Tabs>
 			<Tabs.Screen
-				name='explore'
+				name='index'
 				options={{ tabBarLabel: 'Explore', headerTitle: 'Explore' }}
 			/>
 			<Tabs.Screen
@@ -13,7 +13,7 @@ const TabsLayout = () => {
 				options={{ tabBarLabel: 'WishLists', headerTitle: 'WishLists' }}
 			/>
 			<Tabs.Screen
-				name='index'
+				name='explore'
 				options={{ tabBarLabel: 'Trips', headerTitle: 'Trips', title: 'Trips' }}
 			/>
 			<Tabs.Screen
