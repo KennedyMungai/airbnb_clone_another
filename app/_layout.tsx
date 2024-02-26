@@ -1,14 +1,15 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import { useFonts } from 'expo-font'
-import { Stack } from 'expo-router'
+import { Stack, useRouter } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
 
-import { useColorScheme } from '@/components/useColorScheme'
+import { Ionicons } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native'
 
 export {
-	// Catch any errors thrown by the Layout component.
-	ErrorBoundary
+  // Catch any errors thrown by the Layout component.
+  ErrorBoundary
 } from 'expo-router'
 
 export const unstable_settings = {
@@ -21,7 +22,7 @@ SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
-		mon: require('../assets/fonts/Montserrat-Regular.ttf'),
+		'mon': require('../assets/fonts/Montserrat-Regular.ttf'),
 		'mon-sb': require('../assets/fonts/Montserrat-SemiBold.ttf'),
 		'mon-b': require('../assets/fonts/Montserrat-Bold.ttf'),
 		...FontAwesome.font
@@ -46,7 +47,7 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-	const colorScheme = useColorScheme()
+	const router = useRouter()
 
 	return (
 		<Stack>
@@ -56,7 +57,17 @@ function RootLayoutNav() {
 				options={{
 					headerTitle: 'Log In or Sign up',
 					presentation: 'modal',
-					animation: 'slide_from_bottom'
+					animation: 'slide_from_bottom',
+					headerTitleStyle: {
+						fontFamily: 'mon-sb'
+					},
+					headerLeft: () => (
+						<TouchableOpacity
+							onPress={() => router.back()}
+						>
+							<Ionicons name='close-outline' size={28} />
+						</TouchableOpacity>
+					)
 				}}
 			/>
 		</Stack>
