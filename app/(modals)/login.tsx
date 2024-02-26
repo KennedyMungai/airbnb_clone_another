@@ -1,15 +1,25 @@
 import { useWarmUpBrowser } from '@/hooks/useWarmUpBrowser'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 const LoginModal = () => {
-    useWarmUpBrowser()
+	useWarmUpBrowser()
 
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text>LoginModal</Text>
 		</View>
 	)
 }
 
 export default LoginModal
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		padding: 26,
+		backgroundColor: '#fff'
+	}
+})
