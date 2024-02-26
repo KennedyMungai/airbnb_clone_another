@@ -43,25 +43,25 @@ const LoginModal = () => {
 			</View>
 
 			<View style={{ gap: 24 }}>
-				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+				<TouchableOpacity style={styles.btnOutline}>
 					<Ionicons name='call-outline' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Phone
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+				<TouchableOpacity style={styles.btnOutline}>
 					<Ionicons name='logo-apple' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Apple
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+				<TouchableOpacity style={styles.btnOutline}>
 					<Ionicons name='logo-facebook' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Facebook
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={[styles.btnOutline, { gap: 20 }]}>
+				<TouchableOpacity style={styles.btnOutline}>
 					<Ionicons name='logo-google' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Google
@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		flexDirection: 'row',
-		paddingHorizontal: 10
+		paddingHorizontal: 10,
+        gap: 20
 	},
 	btnOutlineText: {
 		color: '#000',
