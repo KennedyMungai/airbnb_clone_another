@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from 'expo-router'
+import { Stack, useLocalSearchParams } from 'expo-router'
 import React from 'react'
 import { Text, View } from 'react-native'
 
@@ -8,6 +8,7 @@ const ListingDetailsPage = () => {
 
 	return (
 		<View>
+            <Stack.Screen options={{headerTitle: id}} />
 			<Text>ListingDetailsPage</Text>
 		</View>
 	)
