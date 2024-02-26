@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { Link } from 'expo-router'
 import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const categories = [
@@ -36,8 +37,13 @@ const categories = [
 const ExploreHeader = () => {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
-			<View>
-				<View style={styles.container}></View>
+			<View style={styles.container}>
+				<View style={styles.actionRow}>
+					<Link href={'/(modals)/booking'}>Booking</Link>
+					<TouchableOpacity>
+						<Text>Filter</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		</SafeAreaView>
 	)
@@ -47,6 +53,10 @@ export default ExploreHeader
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#FFF'
+		backgroundColor: '#FFF',
+		flex: 1
+	},
+	actionRow: {
+		flexDirection: 'row'
 	}
 })
