@@ -5,24 +5,24 @@ const TabsLayout = () => {
 	return (
 		<Tabs>
 			<Tabs.Screen
+				name='explore'
+				options={{ tabBarLabel: 'Explore', headerTitle: 'Explore' }}
+			/>
+			<Tabs.Screen
+				name='wishlists'
+				options={{ tabBarLabel: 'WishLists', headerTitle: 'WishLists' }}
+			/>
+			<Tabs.Screen
 				name='index'
-				options={{ tabBarLabel: 'Home', headerTitle: 'Home' }}
+				options={{ tabBarLabel: 'Trips', headerTitle: 'Trips', title: 'Trips' }}
 			/>
 			<Tabs.Screen
 				name='inbox'
 				options={{ tabBarLabel: 'Inbox', headerTitle: 'Inbox' }}
 			/>
 			<Tabs.Screen
-				name='explore'
-				options={{ tabBarLabel: 'Explore', headerTitle: 'Explore' }}
-			/>
-			<Tabs.Screen
 				name='profile'
 				options={{ tabBarLabel: 'Profile', headerTitle: 'Profile' }}
-			/>
-			<Tabs.Screen
-				name='wishlists'
-				options={{ tabBarLabel: 'WishLists', headerTitle: 'WishLists' }}
 			/>
 		</Tabs>
 	)
