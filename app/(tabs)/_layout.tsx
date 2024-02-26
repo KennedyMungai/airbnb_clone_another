@@ -6,7 +6,10 @@ const TabsLayout = () => {
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors.primary
+				tabBarActiveTintColor: Colors.primary,
+                tabBarLabelStyle: {
+                    fontFamily: 'mon-sb'
+                }
 			}}
 		>
 			<Tabs.Screen
