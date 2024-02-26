@@ -1,9 +1,14 @@
+import Colors from '@/constants/Colors'
 import { Tabs } from 'expo-router'
 import React from 'react'
 
 const TabsLayout = () => {
 	return (
-		<Tabs>
+		<Tabs
+			screenOptions={{
+				tabBarActiveTintColor: Colors.primary
+			}}
+		>
 			<Tabs.Screen
 				name='index'
 				options={{ tabBarLabel: 'Explore', headerTitle: 'Explore' }}
@@ -14,7 +19,11 @@ const TabsLayout = () => {
 			/>
 			<Tabs.Screen
 				name='explore'
-				options={{ tabBarLabel: 'Trips', headerTitle: 'Trips', title: 'Trips' }}
+				options={{
+					tabBarLabel: 'Trips',
+					headerTitle: 'Trips',
+					title: 'Trips'
+				}}
 			/>
 			<Tabs.Screen
 				name='inbox'
