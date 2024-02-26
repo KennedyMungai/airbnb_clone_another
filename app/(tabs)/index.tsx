@@ -1,10 +1,12 @@
-import { View, Text } from 'react-native'
+import { Link } from 'expo-router'
 import React from 'react'
+import { View } from 'react-native'
 
 const TabsIndexPage = () => {
 	return (
 		<View>
-			<Text>TabsIndexPage</Text>
+			<Link href='/(modals)/login'>Login</Link>
+			<Link href='/(modals)/booking'>Booking</Link>
 		</View>
 	)
 }
