@@ -46,6 +46,8 @@ const LoginModal = () => {
 
 			if (createdSessionId) {
 				setActive!({ session: createdSessionId })
+
+                console.log(createdSessionId)
 			}
 
 			router.back()
