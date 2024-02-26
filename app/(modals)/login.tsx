@@ -1,18 +1,37 @@
 import Colors from '@/constants/Colors'
 import { defaultStyles } from '@/constants/Styles'
 import { useWarmUpBrowser } from '@/hooks/useWarmUpBrowser'
+import { useOAuth } from '@clerk/clerk-expo'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import {
-	StyleSheet,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	View
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
 } from 'react-native'
+
+enum Strategy {
+	Google = 'oauth_google',
+	Apple = 'oauth_apple',
+	Facebook = 'oauth_facebook'
+}
 
 const LoginModal = () => {
 	useWarmUpBrowser()
+
+	const { startOAuthFlow: appleAuth } = useOAuth({
+		strategy: 'oauth_apple'
+	})
+	const { startOAuthFlow: facebookAuth } = useOAuth({
+		strategy: 'oauth_facebook'
+	})
+	const { startOAuthFlow: googleAuth } = useOAuth({
+		strategy: 'oauth_google'
+	})
+
+	const onSelectAuth = async (strategy: Strategy) => {}
 
 	return (
 		<View style={styles.container}>
@@ -49,19 +68,28 @@ const LoginModal = () => {
 						Continue With Phone
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.btnOutline}>
+				<TouchableOpacity
+					style={styles.btnOutline}
+					onPress={() => onSelectAuth(Strategy.Apple)}
+				>
 					<Ionicons name='logo-apple' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Apple
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.btnOutline}>
+				<TouchableOpacity
+					style={styles.btnOutline}
+					onPress={() => onSelectAuth(Strategy.Facebook)}
+				>
 					<Ionicons name='logo-facebook' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Facebook
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.btnOutline}>
+				<TouchableOpacity
+					style={styles.btnOutline}
+					onPress={() => onSelectAuth(Strategy.Google)}
+				>
 					<Ionicons name='logo-google' size={24} />
 					<Text style={styles.btnOutlineText}>
 						Continue With Google
@@ -100,7 +128,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		flexDirection: 'row',
 		paddingHorizontal: 10,
-        gap: 20
+		gap: 20
 	},
 	btnOutlineText: {
 		color: '#000',
