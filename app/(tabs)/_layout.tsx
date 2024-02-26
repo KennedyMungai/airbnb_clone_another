@@ -25,7 +25,17 @@ const TabsLayout = () => {
 			/>
 			<Tabs.Screen
 				name='wishlists'
-				options={{ tabBarLabel: 'WishLists', headerTitle: 'WishLists' }}
+				options={{
+					tabBarLabel: 'WishLists',
+					headerTitle: 'WishLists',
+					tabBarIcon: ({ color, size }) => (
+						<Ionicons
+							name='heart-outline'
+							size={size}
+							color={color}
+						/>
+					)
+				}}
 			/>
 			<Tabs.Screen
 				name='explore'
