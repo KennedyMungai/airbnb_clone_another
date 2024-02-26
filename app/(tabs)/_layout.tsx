@@ -1,5 +1,5 @@
 import Colors from '@/constants/Colors'
-import { FontAwesome5 } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import { Tabs } from 'expo-router'
 import React from 'react'
 
@@ -19,7 +19,7 @@ const TabsLayout = () => {
 					tabBarLabel: 'Explore',
 					headerTitle: 'Explore',
 					tabBarIcon: ({ color, size }) => (
-						<FontAwesome5 name='search' size={size} color={color} />
+						<Ionicons name='search' size={size} color={color} />
 					)
 				}}
 			/>
