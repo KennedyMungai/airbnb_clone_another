@@ -8,8 +8,8 @@ import { Ionicons } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native'
 
 export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary
+	// Catch any errors thrown by the Layout component.
+	ErrorBoundary
 } from 'expo-router'
 
 export const unstable_settings = {
@@ -62,16 +62,29 @@ function RootLayoutNav() {
 						fontFamily: 'mon-sb'
 					},
 					headerLeft: () => (
-						<TouchableOpacity
-							onPress={() => router.back()}
-						>
+						<TouchableOpacity onPress={() => router.back()}>
 							<Ionicons name='close-outline' size={28} />
 						</TouchableOpacity>
 					)
 				}}
 			/>
-      <Stack.Screen name="listing/[id]" />
-      <Stack.Screen name="(modals)/booking" options={{presentation: 'modal', animation: 'slide_from_bottom'}} />
+			<Stack.Screen name='listing/[id]' />
+			<Stack.Screen
+				name='(modals)/booking'
+				options={{
+					presentation: 'transparentModal',
+					animation: 'slide_from_bottom',
+          headerTitle: 'Booking',
+          headerTitleStyle: {
+						fontFamily: 'mon-sb'
+					},
+					headerLeft: () => (
+						<TouchableOpacity onPress={() => router.back()}>
+							<Ionicons name='close-outline' size={28} />
+						</TouchableOpacity>
+					)
+				}}
+			/>
 		</Stack>
 	)
 }
