@@ -19,7 +19,7 @@ const TabsLayout = () => {
 					tabBarLabel: 'Explore',
 					headerTitle: 'Explore',
 					tabBarIcon: ({ color, size }) => (
-						<FontAwesome5 name='search' size={20} />
+						<FontAwesome5 name='search' size={size} color={color} />
 					)
 				}}
 			/>
