@@ -70,6 +70,7 @@ function RootLayoutNav() {
 					)
 				}}
 			/>
+      <Stack.Screen name="listing/[id]" />
 		</Stack>
 	)
 }
