@@ -73,7 +73,7 @@ const TabsLayout = () => {
 					headerTitle: 'Profile',
 					tabBarIcon: ({ color, size }) => (
 						<Ionicons
-							name='person-circle'
+							name='person-circle-outline'
 							color={color}
 							size={size}
 						/>
