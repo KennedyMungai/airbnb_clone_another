@@ -46,9 +46,15 @@ const categories = [
 const ExploreHeader = () => {
 	const itemsRef = useRef<TouchableOpacity[] | null>([])
 	const [activeIndex, setActiveIndex] = useState(0)
+	const scrollRef = useRef<ScrollView | null>(null)
 
 	const selectCategory = (index: number) => {
+		const selected = itemsRef.current![index]
 		setActiveIndex(index)
+
+		selected?.measure((x) => {
+			scrollRef.current?.scrollTo({ x: x - 16, y: 0, animated: true })
+		})
 
 		Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
 	}
@@ -87,6 +93,7 @@ const ExploreHeader = () => {
 						gap: 20,
 						paddingHorizontal: 16
 					}}
+					ref={scrollRef}
 				>
 					{categories.map((category, index) => (
 						<TouchableOpacity
