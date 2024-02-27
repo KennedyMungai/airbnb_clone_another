@@ -13,7 +13,7 @@ const TabsIndexPage = () => {
 	}
 
 	return (
-		<View style={{ flex: 1, backgroundColor: '#fff' }}>
+		<View style={{ flex: 1, backgroundColor: '#fff', marginTop: 80 }}>
 			<Stack.Screen
 				options={{
 					header: () => (
