@@ -1,10 +1,12 @@
 import ExploreHeader from '@/components/ExploreHeader'
 import Listings from '@/components/Listings'
 import { Stack } from 'expo-router'
-import React from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native'
 
 const TabsIndexPage = () => {
+	const [category, setCategory] = useState('Tiny Homes')
+
 	const onDataChanged = (category: string) => {
 		console.log('CHANGED_', category)
 	}
