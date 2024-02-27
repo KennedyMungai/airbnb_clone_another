@@ -10,6 +10,7 @@ import {
 	View
 } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import * as Haptics from 'expo-haptics'
 
 const categories = [
 	{
@@ -45,6 +46,12 @@ const categories = [
 const ExploreHeader = () => {
 	const itemsRef = useRef<TouchableOpacity[] | null>([])
 	const [activeIndex, setActiveIndex] = useState(0)
+
+	const selectCategory = (index: number) => {
+		setActiveIndex(index)
+
+		Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
+	}
 
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
@@ -90,11 +97,21 @@ const ExploreHeader = () => {
 									? styles.categoriesBtnActive
 									: styles.categoriesBtn
 							}
+							onPress={() => selectCategory(index)}
 						>
-							<Text>{category.name}</Text>
+							<Text
+								style={
+									activeIndex
+										? styles.categoryTextActive
+										: styles.categoryText
+								}
+							>
+								{category.name}
+							</Text>
 							<MaterialIcons
 								name={category.icon as any}
 								size={24}
+								color={activeIndex ? '#000' : Colors.grey}
 							/>
 						</TouchableOpacity>
 					))}
