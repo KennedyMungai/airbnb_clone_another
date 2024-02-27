@@ -90,7 +90,7 @@ const ExploreHeader = () => {
 					showsHorizontalScrollIndicator={false}
 					contentContainerStyle={{
 						alignItems: 'center',
-						gap: 20,
+						gap: 30,
 						paddingHorizontal: 16
 					}}
 					ref={scrollRef}
