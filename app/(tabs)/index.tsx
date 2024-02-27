@@ -5,11 +5,17 @@ import React from 'react'
 import { View } from 'react-native'
 
 const TabsIndexPage = () => {
+	const onDataChanged = (category: string) => {
+		console.log('CHANGED_', category)
+	}
+
 	return (
 		<View style={{ flex: 1, backgroundColor: '#fff' }}>
 			<Stack.Screen
 				options={{
-					header: () => <ExploreHeader />
+					header: () => (
+						<ExploreHeader onCategoryChanged={onDataChanged} />
+					)
 				}}
 			/>
 			<Listings />
