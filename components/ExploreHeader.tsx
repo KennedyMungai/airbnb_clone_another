@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		paddingHorizontal: 24,
-		paddingBottom: 16
+		paddingBottom: 16,
+		gap: 10
 	},
 	filterBtn: {
 		padding: 10,
@@ -93,7 +94,10 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		gap: 10,
-		width: 200,
+		flex: 1,
+		padding: 14,
+		borderRadius: 30,
+		backgroundColor: '#FFF',
 		borderColor: '#c2c2c2',
 		borderWidth: StyleSheet.hairlineWidth,
 		elevation: 2,
