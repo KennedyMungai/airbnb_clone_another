@@ -1,3 +1,5 @@
+import Colors from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
 import { Link } from 'expo-router'
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
@@ -40,8 +42,8 @@ const ExploreHeader = () => {
 			<View style={styles.container}>
 				<View style={styles.actionRow}>
 					<Link href={'/(modals)/booking'}>Booking</Link>
-					<TouchableOpacity>
-						<Text>Filter</Text>
+					<TouchableOpacity style={styles.filterBtn}>
+						<Ionicons name='options-outline' size={24} />
 					</TouchableOpacity>
 				</View>
 			</View>
@@ -58,6 +60,16 @@ const styles = StyleSheet.create({
 		height: 130
 	},
 	actionRow: {
-		flexDirection: 'row'
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
+		paddingHorizontal: 24,
+		paddingBottom: 16
+	},
+	filterBtn: {
+		padding: 10,
+		borderWidth: 1,
+		borderColor: Colors.grey,
+		borderRadius: 8
 	}
 })
