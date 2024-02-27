@@ -8,6 +8,7 @@ const TabsIndexPage = () => {
 	const [category, setCategory] = useState('Tiny Homes')
 
 	const onDataChanged = (category: string) => {
+		setCategory(category)
 		console.log('CHANGED_', category)
 	}
 
