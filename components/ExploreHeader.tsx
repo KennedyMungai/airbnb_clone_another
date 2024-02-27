@@ -54,7 +54,8 @@ export default ExploreHeader
 const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#FFF',
-		flex: 1
+		flex: 1,
+		height: 130
 	},
 	actionRow: {
 		flexDirection: 'row'
