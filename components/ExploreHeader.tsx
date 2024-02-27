@@ -1,8 +1,14 @@
 import Colors from '@/constants/Colors'
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons, MaterialIcons } from '@expo/vector-icons'
 import { Link } from 'expo-router'
-import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useRef, useState } from 'react'
+import {
+	ScrollView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const categories = [
@@ -37,6 +43,9 @@ const categories = [
 ]
 
 const ExploreHeader = () => {
+	const itemsRef = useRef<TouchableOpacity[] | null>([])
+	const [activeIndex, setActiveIndex] = useState(0)
+
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
 			<View style={styles.container}>
@@ -63,6 +72,33 @@ const ExploreHeader = () => {
 						<Ionicons name='options-outline' size={24} />
 					</TouchableOpacity>
 				</View>
+				<ScrollView
+					horizontal
+					showsHorizontalScrollIndicator={false}
+					contentContainerStyle={{
+						alignItems: 'center',
+						gap: 20,
+						paddingHorizontal: 16
+					}}
+				>
+					{categories.map((category, index) => (
+						<TouchableOpacity
+							key={index}
+							ref={(el) => (itemsRef.current[index] = el)}
+							style={
+								activeIndex === index
+									? styles.categoriesBtnActive
+									: styles.categoriesBtn
+							}
+						>
+							<Text>{category.name}</Text>
+							<MaterialIcons
+								name={category.icon as any}
+								size={24}
+							/>
+						</TouchableOpacity>
+					))}
+				</ScrollView>
 			</View>
 		</SafeAreaView>
 	)
@@ -108,5 +144,29 @@ const styles = StyleSheet.create({
 			width: 1,
 			height: 1
 		}
+	},
+	categoryText: {
+		fontSize: 14,
+		fontFamily: 'mon-sb',
+		color: Colors.grey
+	},
+	categoryTextActive: {
+		fontSize: 14,
+		fontFamily: 'mon-sb',
+		color: '#000'
+	},
+	categoriesBtn: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingBottom: 0
+	},
+	categoriesBtnActive: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingBottom: 0,
+		borderBottomColor: '#000',
+		borderBottomWidth: 2
 	}
 })
