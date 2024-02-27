@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		gap: 10,
+		width: 200,
 		borderColor: '#c2c2c2',
 		borderWidth: StyleSheet.hairlineWidth,
 		elevation: 2,
