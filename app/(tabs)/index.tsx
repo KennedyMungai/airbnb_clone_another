@@ -20,7 +20,7 @@ const TabsIndexPage = () => {
 					)
 				}}
 			/>
-			<Listings />
+			<Listings listings={[]} category={category} />
 		</View>
 	)
 }
