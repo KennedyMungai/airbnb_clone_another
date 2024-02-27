@@ -6,11 +6,13 @@ import { View } from 'react-native'
 
 const TabsIndexPage = () => {
 	return (
-		<View style={{flex: 1}}>
-			<Stack.Screen options={{
-                header: () => <ExploreHeader />
-            }} />
-            <Listings />
+		<View style={{ flex: 1, backgroundColor: '#fff' }}>
+			<Stack.Screen
+				options={{
+					header: () => <ExploreHeader />
+				}}
+			/>
+			<Listings />
 		</View>
 	)
 }
