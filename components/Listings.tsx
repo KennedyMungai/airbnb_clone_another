@@ -12,6 +12,11 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import Animated, {
+	FadeIn,
+	FadeInRight,
+	FadeOutLeft
+} from 'react-native-reanimated'
 
 type Props = {
 	listings: any[]
@@ -34,7 +39,11 @@ const Listings = ({ category, listings: items }: Props) => {
 		return (
 			<Link href={`/listing/${item.id}`} asChild>
 				<TouchableOpacity>
-					<View style={styles.listing}>
+					<Animated.View
+						style={styles.listing}
+						entering={FadeInRight}
+						exiting={FadeOutLeft}
+					>
 						<Image
 							source={{ uri: item.medium_url }}
 							style={styles.image}
@@ -84,7 +93,7 @@ const Listings = ({ category, listings: items }: Props) => {
 							</Text>
 							<Text style={{ fontFamily: 'mon' }}>night</Text>
 						</View>
-					</View>
+					</Animated.View>
 				</TouchableOpacity>
 			</Link>
 		)
