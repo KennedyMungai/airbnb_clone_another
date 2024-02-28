@@ -4,7 +4,6 @@ import { Text, View } from 'react-native'
 
 const ListingDetailsPage = () => {
 	const { id } = useLocalSearchParams<{ id: string }>()
-    console.log(id)
 
 	return (
 		<View>
