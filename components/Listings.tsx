@@ -91,7 +91,8 @@ export default Listings
 const styles = StyleSheet.create({
 	listing: {
 		padding: 16,
-		gap: 16
+		gap: 16,
+		marginVertical: 16
 	},
 	image: {
 		width: '100%',
