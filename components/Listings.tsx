@@ -75,6 +75,9 @@ const Listings = ({ category, listings: items }: Props) => {
 								<Text>{item.review_scores_rating / 20}</Text>
 							</View>
 						</View>
+						<Text style={{ fontFamily: 'mon' }}>
+							{item.room_type}
+						</Text>
 					</View>
 				</TouchableOpacity>
 			</Link>
