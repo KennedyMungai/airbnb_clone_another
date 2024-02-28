@@ -64,7 +64,13 @@ const Listings = ({ category, listings: items }: Props) => {
 							<Text style={{ fontFamily: 'mon-sb' }}>
 								{item.name}
 							</Text>
-							<View style={{ flexDirection: 'row', flex: 1 }}>
+							<View
+								style={{
+									flexDirection: 'row',
+									flex: 1,
+									gap: 4
+								}}
+							>
 								<Ionicons name='star' size={16} />
 								<Text>{item.review_scores_rating / 20}</Text>
 							</View>
