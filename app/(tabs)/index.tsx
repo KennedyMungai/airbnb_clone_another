@@ -1,11 +1,13 @@
+import listingsData from '@/assets/data/air-bnb-listings.json'
 import ExploreHeader from '@/components/ExploreHeader'
 import Listings from '@/components/Listings'
 import { Stack } from 'expo-router'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { View } from 'react-native'
 
 const TabsIndexPage = () => {
 	const [category, setCategory] = useState('Tiny Homes')
+	const items = useMemo(() => listingsData, [])
 
 	const onDataChanged = (category: string) => {
 		setCategory(category)
