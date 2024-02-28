@@ -7,7 +7,7 @@ import { View } from 'react-native'
 
 const TabsIndexPage = () => {
 	const [category, setCategory] = useState('Tiny Homes')
-	const items = useMemo(() => listingsData, [])
+	const items = useMemo(() => listingsData as any, [])
 
 	const onDataChanged = (category: string) => {
 		setCategory(category)
@@ -23,7 +23,7 @@ const TabsIndexPage = () => {
 					)
 				}}
 			/>
-			<Listings listings={[]} category={category} />
+			<Listings listings={items} category={category} />
 		</View>
 	)
 }
