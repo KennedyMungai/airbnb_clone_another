@@ -78,6 +78,12 @@ const Listings = ({ category, listings: items }: Props) => {
 						<Text style={{ fontFamily: 'mon' }}>
 							{item.room_type}
 						</Text>
+						<View style={{ flexDirection: 'row', gap: 4 }}>
+							<Text style={{ fontFamily: 'mon-sb' }}>
+								€ {item.price}
+							</Text>
+							<Text style={{ fontFamily: 'mon' }}>night</Text>
+						</View>
 					</View>
 				</TouchableOpacity>
 			</Link>
