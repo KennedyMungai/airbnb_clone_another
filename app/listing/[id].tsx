@@ -1,11 +1,23 @@
 import listingsData from '@/assets/data/airbnb-listings.json'
 import Colors from '@/constants/Colors'
+import { defaultStyles } from '@/constants/Styles'
 import { Listing } from '@/interfaces/listing'
 import { Ionicons } from '@expo/vector-icons'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import React from 'react'
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
-import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated'
+import {
+	Dimensions,
+	Image,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
+import Animated, {
+	FadeInDown,
+	FadeInUp,
+	SlideInDown
+} from 'react-native-reanimated'
 
 const IMG_HEIGHT = 300
 const { width } = Dimensions.get('window')
@@ -69,6 +81,30 @@ const ListingDetailsPage = () => {
 					</Text>
 				</View>
 			</Animated.ScrollView>
+			<Animated.View
+				style={defaultStyles.footer}
+				entering={SlideInDown.delay(200)}
+			>
+				<View
+					style={{
+						flexDirection: 'row',
+						justifyContent: 'space-between',
+						alignItems: 'center'
+					}}
+				>
+					<TouchableOpacity style={styles.footerText}>
+						<Text style={styles.footerPrice}>
+							€ {listing!.price}
+						</Text>
+						<Text style={{ fontFamily: 'mon-sb' }}>night</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={[defaultStyles.btn, { paddingHorizontal: 16 }]}
+					>
+						<Text style={defaultStyles.btnText}>Reserve</Text>
+					</TouchableOpacity>
+				</View>
+			</Animated.View>
 		</View>
 	)
 }
