@@ -1,5 +1,6 @@
 import Colors from '@/constants/Colors'
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'
+import * as Haptics from 'expo-haptics'
 import { Link } from 'expo-router'
 import React, { useRef, useState } from 'react'
 import {
@@ -10,8 +11,6 @@ import {
 	View
 } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import * as Haptics from 'expo-haptics'
-import listingsData from '@/assets/data/air-bnb-listings.json'
 
 const categories = [
 	{
