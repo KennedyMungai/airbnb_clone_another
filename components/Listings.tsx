@@ -8,6 +8,7 @@ import {
 	Image,
 	ListRenderItem,
 	StyleSheet,
+	Text,
 	TouchableOpacity,
 	View
 } from 'react-native'
@@ -52,6 +53,22 @@ const Listings = ({ category, listings: items }: Props) => {
 								color={'#5D5D5D70'}
 							/>
 						</TouchableOpacity>
+						<View
+							style={{
+								flexDirection: 'row',
+								flex: 1,
+								gap: 10,
+								justifyContent: 'space-between'
+							}}
+						>
+							<Text style={{ fontFamily: 'mon-sb' }}>
+								{item.name}
+							</Text>
+							<View style={{ flexDirection: 'row', flex: 1 }}>
+								<Ionicons name='star' size={16} />
+								<Text>{item.review_scores_rating / 20}</Text>
+							</View>
+						</View>
 					</View>
 				</TouchableOpacity>
 			</Link>
