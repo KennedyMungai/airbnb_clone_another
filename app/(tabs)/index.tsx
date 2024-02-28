@@ -1,4 +1,4 @@
-import listingsData from '@/assets/data/air-bnb-listings.json'
+import listingsData from '@/assets/data/airbnb-listings.json'
 import ExploreHeader from '@/components/ExploreHeader'
 import Listings from '@/components/Listings'
 import { Stack } from 'expo-router'
