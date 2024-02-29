@@ -43,6 +43,13 @@ const ListingDetailsPage = () => {
 						[-IMG_HEIGHT, 0, IMG_HEIGHT],
 						[-IMG_HEIGHT / 2, 0, IMG_HEIGHT * 0.75]
 					)
+				},
+				{
+					scale: interpolate(
+						scrollOffset.value,
+						[-IMG_HEIGHT, 0, IMG_HEIGHT],
+						[2, 1, 1]
+					)
 				}
 			]
 		}
