@@ -66,5 +66,8 @@ const styles = StyleSheet.create({
 			height: 10
 		}
 	},
-	markerText: {}
+	markerText: {
+		fontSize: 14,
+		fontFamily: 'mon-sb'
+	}
 })
