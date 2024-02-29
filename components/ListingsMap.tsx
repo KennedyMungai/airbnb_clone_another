@@ -18,10 +18,10 @@ const ListingsMap = ({ listings }: Props) => {
 				showsMyLocationButton
 			>
 				{listings.features.map((item) => (
-					<Marker 
+					<Marker
 						coordinate={{
-							longitude: item.geometry.coordinates[0],
-							latitude: item.geometry.coordinates[1]
+							longitude: +item.properties.longitude,
+							latitude: +item.properties.latitude
 						}}
 					/>
 				))}
