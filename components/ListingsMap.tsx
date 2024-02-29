@@ -26,6 +26,7 @@ const ListingsMap = ({ listings }: Props) => {
 				showsMyLocationButton
 				clusterColor='#FFF'
 				clusterTextColor='#000'
+				clusterFontFamily='mon-sb'
 			>
 				{listings.features.map((item, index) => (
 					<Marker
