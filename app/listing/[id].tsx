@@ -17,7 +17,9 @@ import Animated, {
 	FadeInDown,
 	FadeInUp,
 	SlideInDown,
+	interpolate,
 	useAnimatedRef,
+	useAnimatedStyle,
 	useScrollViewOffset
 } from 'react-native-reanimated'
 
@@ -31,6 +33,20 @@ const ListingDetailsPage = () => {
 	const scrollRef = useAnimatedRef<Animated.ScrollView>()
 
 	const scrollOffset = useScrollViewOffset(scrollRef)
+
+	const imageAnimatedStyle = useAnimatedStyle(() => {
+		return {
+			transform: [
+				{
+					translateY: interpolate(
+						scrollOffset.value,
+						[-IMG_HEIGHT, 0, IMG_HEIGHT],
+						[-IMG_HEIGHT / 2, 0, IMG_HEIGHT * 0.75]
+					)
+				}
+			]
+		}
+	})
 
 	return (
 		<View style={styles.container}>
@@ -47,7 +63,7 @@ const ListingDetailsPage = () => {
 			>
 				<Animated.Image
 					source={{ uri: listing!.xl_picture_url }}
-					style={styles.image}
+					style={[styles.image, imageAnimatedStyle]}
 					entering={FadeInUp}
 					exiting={FadeInDown}
 				/>
