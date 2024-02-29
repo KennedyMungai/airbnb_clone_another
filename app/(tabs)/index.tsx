@@ -1,9 +1,11 @@
 import listingsData from '@/assets/data/airbnb-listings.json'
 import ExploreHeader from '@/components/ExploreHeader'
 import Listings from '@/components/Listings'
+import ListingsMap from '@/components/ListingsMap'
 import { Stack } from 'expo-router'
 import React, { useMemo, useState } from 'react'
 import { View } from 'react-native'
+import ListingsDataGeo from '@/assets/data/airbnb-listings.geo.json'
 
 const TabsIndexPage = () => {
 	const [category, setCategory] = useState('Tiny Homes')
@@ -23,7 +25,8 @@ const TabsIndexPage = () => {
 					)
 				}}
 			/>
-			<Listings listings={items} category={category} />
+			{/* <Listings listings={items} category={category} /> */}
+			<ListingsMap listings={ListingsDataGeo} />
 		</View>
 	)
 }
