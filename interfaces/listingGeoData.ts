@@ -1,9 +1,9 @@
 export interface ListingsGeoData {
 	type: string
-	features: Feature[]
+	features: GeoDataFeature[]
 }
 
-interface Feature {
+export interface GeoDataFeature {
 	type: string
 	geometry: Geometry
 	properties: Properties
