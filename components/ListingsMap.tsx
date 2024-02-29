@@ -1,7 +1,7 @@
 import { defaultStyles } from '@/constants/Styles'
 import { GeoDataFeature, ListingsGeoData } from '@/interfaces/listingGeoData'
 import { useRouter } from 'expo-router'
-import React from 'react'
+import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import MapView from 'react-native-map-clustering'
 import { Marker } from 'react-native-maps'
@@ -10,7 +10,7 @@ type Props = {
 	listings: ListingsGeoData
 }
 
-const ListingsMap = ({ listings }: Props) => {
+const ListingsMap = memo(({ listings }: Props) => {
 	const router = useRouter()
 
 	const onMarkerSelected = (item: GeoDataFeature) => {
@@ -77,7 +77,7 @@ const ListingsMap = ({ listings }: Props) => {
 			</MapView>
 		</View>
 	)
-}
+})
 
 export default ListingsMap
 
