@@ -6,6 +6,7 @@ import { Stack } from 'expo-router'
 import React, { useMemo, useState } from 'react'
 import { View } from 'react-native'
 import ListingsDataGeo from '@/assets/data/airbnb-listings.geo.json'
+import ListingsBottomSheet from '@/components/ListingsBottomSheet'
 
 const TabsIndexPage = () => {
 	const [category, setCategory] = useState('Tiny Homes')
@@ -27,6 +28,7 @@ const TabsIndexPage = () => {
 			/>
 			{/* <Listings listings={items} category={category} /> */}
 			<ListingsMap listings={ListingsDataGeo} />
+			<ListingsBottomSheet listings={items} category={category} />
 		</View>
 	)
 }
