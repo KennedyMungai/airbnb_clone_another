@@ -17,8 +17,9 @@ const ListingsMap = ({ listings }: Props) => {
 				showsUserLocation
 				showsMyLocationButton
 			>
-				{listings.features.map((item) => (
+				{listings.features.map((item, index) => (
 					<Marker
+						key={index}
 						coordinate={{
 							longitude: +item.properties.longitude,
 							latitude: +item.properties.latitude
