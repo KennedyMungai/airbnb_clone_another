@@ -1,5 +1,6 @@
 import { defaultStyles } from '@/constants/Styles'
-import { ListingsGeoData } from '@/interfaces/listingGeoData'
+import { GeoDataFeature, ListingsGeoData } from '@/interfaces/listingGeoData'
+import { useRouter } from 'expo-router'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
@@ -9,14 +10,17 @@ type Props = {
 }
 
 const ListingsMap = ({ listings }: Props) => {
-	const onMarkerSelected = (event: any) => {
-		console.log(event)
+	const router = useRouter()
+
+	const onMarkerSelected = (item: GeoDataFeature) => {
+		router.push(`/listing/${item.properties.id}`)
 	}
 
 	return (
 		<View style={defaultStyles.container}>
 			<MapView
 				style={StyleSheet.absoluteFill}
+				provider='google'
 				showsUserLocation
 				showsMyLocationButton
 			>
