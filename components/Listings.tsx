@@ -1,10 +1,10 @@
 import { defaultStyles } from '@/constants/Styles'
 import { Listing } from '@/interfaces/listing'
 import { Ionicons } from '@expo/vector-icons'
+import { BottomSheetFlatList, BottomSheetFlatListMethods } from '@gorhom/bottom-sheet'
 import { Link } from 'expo-router'
 import React, { useEffect, useRef, useState } from 'react'
 import {
-	FlatList,
 	Image,
 	ListRenderItem,
 	StyleSheet,
@@ -22,7 +22,7 @@ type Props = {
 
 const Listings = ({ category, listings: items, refresh }: Props) => {
 	const [loading, setLoading] = useState(false)
-	const listRef = useRef<FlatList>(null)
+	const listRef = useRef<BottomSheetFlatListMethods>(null)
 
 	useEffect(() => {
 		if (refresh) {
@@ -104,7 +104,7 @@ const Listings = ({ category, listings: items, refresh }: Props) => {
 
 	return (
 		<View style={defaultStyles.container}>
-			<FlatList
+			<BottomSheetFlatList
 				data={loading ? [] : items}
 				ref={listRef}
 				renderItem={renderRow}
