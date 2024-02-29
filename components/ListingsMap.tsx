@@ -12,7 +12,6 @@ const ListingsMap = ({ listings }: Props) => {
 		<View style={defaultStyles.container}>
 			<MapView
 				style={styles.map}
-				provider={PROVIDER_GOOGLE}
 				showsUserLocation
 				showsMyLocationButton
 			/>
