@@ -11,7 +11,7 @@ const ListingsMap = ({ listings }: Props) => {
 	return (
 		<View style={defaultStyles.container}>
 			<MapView
-				style={styles.map}
+				style={StyleSheet.absoluteFill}
 				showsUserLocation
 				showsMyLocationButton
 			/>
