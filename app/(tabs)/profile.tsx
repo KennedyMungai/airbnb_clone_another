@@ -63,7 +63,7 @@ const Profile = () => {
 						{edit ? (
 							<TouchableOpacity onPress={onSaveUser}>
 								<Ionicons
-									name='create-outline'
+									name='checkmark-outline'
 									size={24}
 									color={Colors.dark}
 								/>
