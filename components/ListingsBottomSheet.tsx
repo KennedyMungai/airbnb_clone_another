@@ -1,6 +1,8 @@
-import { View, Text } from 'react-native'
-import React from 'react'
 import { Listing } from '@/interfaces/listing'
+import BottomSheet from '@gorhom/bottom-sheet'
+import React, { useMemo, useRef } from 'react'
+import { View } from 'react-native'
+import Listings from './Listings'
 
 type Props = {
 	listings: Listing[]
@@ -8,10 +10,15 @@ type Props = {
 }
 
 const ListingsBottomSheet = ({ category, listings }: Props) => {
+	const bottomSheetRef = useRef<BottomSheet>(null)
+	const snapPoints = useMemo(() => ['10%', '100%'], [])
+
 	return (
-		<View>
-			<Text>ListingsBottomSheet</Text>
-		</View>
+		<BottomSheet ref={bottomSheetRef} snapPoints={snapPoints}>
+			<View style={{ flex: 1 }}>
+				<Listings listings={listings} category={category} />
+			</View>
+		</BottomSheet>
 	)
 }
 
