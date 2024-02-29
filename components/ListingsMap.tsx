@@ -2,7 +2,7 @@ import { defaultStyles } from '@/constants/Styles'
 import { GeoDataFeature, ListingsGeoData } from '@/interfaces/listingGeoData'
 import { useRouter } from 'expo-router'
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 
 type Props = {
@@ -32,7 +32,13 @@ const ListingsMap = ({ listings }: Props) => {
 							longitude: +item.properties.longitude,
 							latitude: +item.properties.latitude
 						}}
-					/>
+					>
+						<View style={styles.marker}>
+							<Text style={styles.markerText}>
+								€ {item.properties.price}
+							</Text>
+						</View>
+					</Marker>
 				))}
 			</MapView>
 		</View>
@@ -40,3 +46,25 @@ const ListingsMap = ({ listings }: Props) => {
 }
 
 export default ListingsMap
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1
+	},
+	marker: {
+		backgroundColor: 'white',
+		padding: 6,
+		alignItems: 'center',
+		justifyContent: 'center',
+		borderRadius: 12,
+		elevation: 5,
+		shadowColor: '#000',
+		shadowOpacity: 0.1,
+		shadowRadius: 6,
+		shadowOffset: {
+			width: 1,
+			height: 10
+		}
+	},
+	markerText: {}
+})
