@@ -29,7 +29,7 @@ const Profile = () => {
 	return (
 		<View>
 			<View style={styles.headerContainer}>
-				<Text>Profile</Text>
+				<Text style={styles.headerText}>Profile</Text>
 				<Ionicons name='notifications-outline' size={26} />
 			</View>
 			<Button title='Log Out' onPress={() => signOut()} />
@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
 	headerContainer: {
 		flexDirection: 'row',
 		padding: 24,
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		alignItems: 'center'
+	},
+	headerText: {
+		fontFamily: 'mon-b',
+		fontSize: 24
 	}
 })
