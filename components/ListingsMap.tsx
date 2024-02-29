@@ -24,13 +24,24 @@ const ListingsMap = ({ listings }: Props) => {
 
 		return (
 			<Marker
+				onPress={onPress}
 				key={`cluster-${id}`}
 				coordinate={{
 					longitude: geometry.coordinates[0],
 					latitude: geometry.coordinates[1]
 				}}
 			>
-				<View>Test</View>
+				<View style={styles.marker}>
+					<Text
+						style={{
+							color: '#000',
+							textAlign: 'center',
+							fontFamily: 'mon-sb'
+						}}
+					>
+						{points}
+					</Text>
+				</View>
 			</Marker>
 		)
 	}
