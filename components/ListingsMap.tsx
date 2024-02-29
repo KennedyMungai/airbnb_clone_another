@@ -1,15 +1,18 @@
 import { defaultStyles } from '@/constants/Styles'
-import { Listing } from '@/interfaces/listing'
 import { ListingsGeoData } from '@/interfaces/listingGeoData'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
+import MapView, { Marker } from 'react-native-maps'
 
 type Props = {
 	listings: ListingsGeoData
 }
 
 const ListingsMap = ({ listings }: Props) => {
+	const onMarkerSelected = (event: any) => {
+		console.log(event)
+	}
+
 	return (
 		<View style={defaultStyles.container}>
 			<MapView
@@ -20,6 +23,7 @@ const ListingsMap = ({ listings }: Props) => {
 				{listings.features.map((item, index) => (
 					<Marker
 						key={index}
+						onPress={() => onMarkerSelected(item)}
 						coordinate={{
 							longitude: +item.properties.longitude,
 							latitude: +item.properties.latitude
@@ -32,9 +36,3 @@ const ListingsMap = ({ listings }: Props) => {
 }
 
 export default ListingsMap
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1
-	}
-})
