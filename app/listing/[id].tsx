@@ -61,7 +61,16 @@ const ListingDetailsPage = () => {
 							color={'#000'}
 						/>
 					</TouchableOpacity>
-					<TouchableOpacity></TouchableOpacity>
+					<TouchableOpacity
+						style={styles.roundButton}
+						onPress={() => console.log('You liked this page')}
+					>
+						<Ionicons
+							name='heart-outline'
+							size={22}
+							color={'#000'}
+						/>
+					</TouchableOpacity>
 				</View>
 			)
 		})
@@ -244,7 +253,8 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white',
 		alignItems: 'center',
 		justifyContent: 'center',
-		color: Colors.primary
+		color: Colors.primary,
+		borderWidth: StyleSheet.hairlineWidth
 	},
 	bar: {
 		flexDirection: 'row',
