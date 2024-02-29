@@ -43,6 +43,8 @@ const Profile = () => {
 				/>
 			)}
 
+			{user && <View style={styles.card}></View>}
+
 			{!isSignedIn && (
 				<Link href={'/(modals)/login'} asChild>
 					<Button title='Log In' color={Colors.dark} />
@@ -71,5 +73,20 @@ const styles = StyleSheet.create({
 	headerText: {
 		fontFamily: 'mon-b',
 		fontSize: 24
+	},
+	card: {
+		backgroundColor: 'white',
+		padding: 24,
+		borderRadius: 16,
+		marginHorizontal: 24,
+		marginTop: 24,
+		elevation: 2,
+		shadowColor: 'black',
+		shadowOpacity: 0.2,
+		shadowRadius: 6,
+		shadowOffset: { width: 1, height: 2 },
+		alignItems: 'center',
+		gap: 14,
+		marginBottom: 24
 	}
 })
