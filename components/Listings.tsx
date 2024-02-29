@@ -25,7 +25,9 @@ const Listings = ({ category, listings: items, refresh }: Props) => {
 	const listRef = useRef<FlatList>(null)
 
 	useEffect(() => {
-		console.log('REFRESH LISTINGS')
+		if (refresh) {
+			listRef.current?.scrollToOffset({ offset: 0, animated: true })
+		}
 	}, [refresh])
 
 	useEffect(() => {
