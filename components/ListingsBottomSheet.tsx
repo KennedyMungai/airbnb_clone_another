@@ -25,6 +25,7 @@ const ListingsBottomSheet = ({ category, listings }: Props) => {
 			handleIndicatorStyle={{ backgroundColor: Colors.grey }}
 			enablePanDownToClose={false}
 			index={1}
+			style={styles.sheetContainer}
 		>
 			<View style={{ flex: 1 }}>
 				<Listings listings={listings} category={category} />
@@ -58,5 +59,16 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		borderRadius: 30,
 		gap: 8
+	},
+	sheetContainer: {
+		backgroundColor: 'white',
+		elevation: 4,
+		shadowColor: '#000',
+		shadowOpacity: 0.3,
+		shadowRadius: 4,
+		shadowOffset: {
+			width: 1,
+			height: 1
+		}
 	}
 })
