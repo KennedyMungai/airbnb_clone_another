@@ -2,7 +2,7 @@ import Colors from '@/constants/Colors'
 import { Listing } from '@/interfaces/listing'
 import { Ionicons } from '@expo/vector-icons'
 import BottomSheet from '@gorhom/bottom-sheet'
-import React, { useMemo, useRef } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Listings from './Listings'
@@ -16,8 +16,12 @@ const ListingsBottomSheet = ({ category, listings }: Props) => {
 	const bottomSheetRef = useRef<BottomSheet>(null)
 	const snapPoints = useMemo(() => ['10%', '100%'], [])
 
+	const [refresh, setRefresh] = useState(0)
+
 	const showMap = () => {
 		bottomSheetRef.current?.collapse()
+
+		setRefresh(refresh + 1)
 	}
 
 	return (
@@ -30,7 +34,7 @@ const ListingsBottomSheet = ({ category, listings }: Props) => {
 			style={styles.sheetContainer}
 		>
 			<View style={{ flex: 1 }}>
-				<Listings listings={listings} category={category} />
+				<Listings listings={listings} category={category} refresh={refresh} />
 				<View style={styles.absoluteButton}>
 					<TouchableOpacity onPress={showMap} style={styles.btn}>
 						<Text style={{ fontFamily: 'mon-sb', color: 'white' }}>
