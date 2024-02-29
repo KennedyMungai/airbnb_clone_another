@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 import { defaultStyles } from '@/constants/Styles'
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 
 type Props = {
 	listings: any[]
