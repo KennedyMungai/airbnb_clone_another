@@ -1,3 +1,4 @@
+import { defaultStyles } from '@/constants/Styles'
 import { useUser } from '@clerk/clerk-expo'
 import { useAuth } from '@clerk/clerk-react'
 import { Ionicons } from '@expo/vector-icons'
@@ -27,7 +28,7 @@ const Profile = () => {
 	const onCaptureImage = async () => {}
 
 	return (
-		<SafeAreaView>
+		<SafeAreaView style={defaultStyles.container}>
 			<View style={styles.headerContainer}>
 				<Text style={styles.headerText}>Profile</Text>
 				<Ionicons name='notifications-outline' size={26} />
