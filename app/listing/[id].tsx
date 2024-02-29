@@ -16,7 +16,9 @@ import {
 import Animated, {
 	FadeInDown,
 	FadeInUp,
-	SlideInDown
+	SlideInDown,
+	useAnimatedRef,
+	useScrollViewOffset
 } from 'react-native-reanimated'
 
 const IMG_HEIGHT = 300
@@ -26,6 +28,10 @@ const ListingDetailsPage = () => {
 	const { id } = useLocalSearchParams<{ id: string }>()
 	const listing = (listingsData as Listing[]).find((item) => item.id === id)
 
+	const scrollRef = useAnimatedRef<Animated.ScrollView>()
+
+	const scrollOffset = useScrollViewOffset(scrollRef)
+
 	return (
 		<View style={styles.container}>
 			<Stack.Screen
@@ -34,7 +40,11 @@ const ListingDetailsPage = () => {
 					headerTransparent: true
 				}}
 			/>
-			<Animated.ScrollView>
+			<Animated.ScrollView
+				ref={scrollRef}
+				contentContainerStyle={{ paddingBottom: 100 }}
+				scrollEventThrottle={16}
+			>
 				<Animated.Image
 					source={{ uri: listing!.xl_picture_url }}
 					style={styles.image}
