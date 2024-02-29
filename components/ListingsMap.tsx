@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import MapView from 'react-native-maps'
+import { defaultStyles } from '@/constants/Styles'
 
 type Props = {
 	listings: any[]
@@ -8,8 +9,8 @@ type Props = {
 
 const ListingsMap = ({ listings }: Props) => {
 	return (
-		<View style={styles.container}>
-			<MapView style={styles.map} />
+		<View style={defaultStyles.container}>
+			<MapView style={styles.map} showsUserLocation />
 		</View>
 	)
 }
