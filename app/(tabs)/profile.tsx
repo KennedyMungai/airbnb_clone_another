@@ -5,7 +5,15 @@ import { useAuth } from '@clerk/clerk-react'
 import { Ionicons } from '@expo/vector-icons'
 import { Link } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import {
+	Button,
+	Image,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 
 const Profile = () => {
 	const { signOut, isSignedIn } = useAuth()
@@ -43,7 +51,16 @@ const Profile = () => {
 				/>
 			)}
 
-			{user && <View style={styles.card}></View>}
+			{user && (
+				<View style={styles.card}>
+					<TouchableOpacity onPress={onCaptureImage}>
+						<Image
+							source={{ uri: user?.imageUrl }}
+							style={styles.avatar}
+						/>
+					</TouchableOpacity>
+				</View>
+			)}
 
 			{!isSignedIn && (
 				<Link href={'/(modals)/login'} asChild>
@@ -88,5 +105,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		gap: 14,
 		marginBottom: 24
+	},
+	avatar: {
+		width: 100,
+		height: 100,
+		borderRadius: 50,
+		backgroundColor: Colors.grey
 	}
 })
