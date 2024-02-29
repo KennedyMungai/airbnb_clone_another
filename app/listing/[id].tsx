@@ -49,6 +49,9 @@ const ListingDetailsPage = () => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
+			headerBackground: () => (
+				<Animated.View style={[headerAnimatedStyle, styles.header]} />
+			),
 			headerRight: () => (
 				<View style={styles.bar}>
 					<TouchableOpacity
@@ -102,6 +105,12 @@ const ListingDetailsPage = () => {
 					)
 				}
 			]
+		}
+	})
+
+	const headerAnimatedStyle = useAnimatedStyle(() => {
+		return {
+			opacity: interpolate(scrollOffset.value, [0, IMG_HEIGHT], [0, 1])
 		}
 	})
 
