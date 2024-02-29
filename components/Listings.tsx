@@ -108,6 +108,9 @@ const Listings = ({ category, listings: items, refresh }: Props) => {
 				data={loading ? [] : items}
 				ref={listRef}
 				renderItem={renderRow}
+				ListHeaderComponent={
+					<Text style={styles.info}>{items.length} Homes</Text>
+				}
 			/>
 		</View>
 	)
@@ -125,5 +128,11 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: 300,
 		borderRadius: 10
+	},
+	info: {
+		textAlign: 'center',
+		fontFamily: 'mon-sb',
+		fontSize: 16,
+		marginTop: 4
 	}
 })
