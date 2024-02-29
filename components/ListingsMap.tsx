@@ -1,10 +1,12 @@
 import { defaultStyles } from '@/constants/Styles'
+import { Listing } from '@/interfaces/listing'
+import { ListingsGeoData } from '@/interfaces/listingGeoData'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 
 type Props = {
-	listings: any[]
+	listings: ListingsGeoData
 }
 
 const ListingsMap = ({ listings }: Props) => {
@@ -14,7 +16,16 @@ const ListingsMap = ({ listings }: Props) => {
 				style={StyleSheet.absoluteFill}
 				showsUserLocation
 				showsMyLocationButton
-			/>
+			>
+				{listings.features.map((item) => (
+					<Marker 
+						coordinate={{
+							longitude: item.geometry.coordinates[0],
+							latitude: item.geometry.coordinates[1]
+						}}
+					/>
+				))}
+			</MapView>
 		</View>
 	)
 }
