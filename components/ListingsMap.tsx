@@ -10,7 +10,7 @@ type Props = {
 const ListingsMap = ({ listings }: Props) => {
 	return (
 		<View style={defaultStyles.container}>
-			<MapView style={styles.map} showsUserLocation />
+			<MapView style={styles.map} showsUserLocation showsMyLocationButton />
 		</View>
 	)
 }
