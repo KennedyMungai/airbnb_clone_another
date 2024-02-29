@@ -71,6 +71,7 @@ const TabsLayout = () => {
 				options={{
 					tabBarLabel: 'Profile',
 					headerTitle: 'Profile',
+					headerShown: false,
 					tabBarIcon: ({ color, size }) => (
 						<Ionicons
 							name='person-circle-outline'
