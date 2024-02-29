@@ -82,6 +82,8 @@ const Profile = () => {
 							</View>
 						)}
 					</View>
+					<Text>{email}</Text>
+					<Text>Since {user?.createdAt?.toLocaleDateString()}</Text>
 				</View>
 			)}
 
