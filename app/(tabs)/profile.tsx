@@ -72,6 +72,13 @@ const Profile = () => {
 								>
 									{firstName} {lastName}
 								</Text>
+								<TouchableOpacity onPress={() => setEdit(true)}>
+									<Ionicons
+										name='create-outline'
+										size={24}
+										color={Colors.dark}
+									/>
+								</TouchableOpacity>
 							</View>
 						)}
 					</View>
