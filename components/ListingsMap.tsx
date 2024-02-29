@@ -3,7 +3,8 @@ import { GeoDataFeature, ListingsGeoData } from '@/interfaces/listingGeoData'
 import { useRouter } from 'expo-router'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import MapView, { Marker } from 'react-native-maps'
+import MapView from 'react-native-map-clustering'
+import { Marker } from 'react-native-maps'
 
 type Props = {
 	listings: ListingsGeoData
