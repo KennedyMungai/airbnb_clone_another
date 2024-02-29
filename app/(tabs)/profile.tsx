@@ -59,6 +59,22 @@ const Profile = () => {
 							style={styles.avatar}
 						/>
 					</TouchableOpacity>
+					<View style={{ flexDirection: 'row', gap: 6 }}>
+						{edit ? (
+							<Text>EDIT</Text>
+						) : (
+							<View style={styles.editRow}>
+								<Text
+									style={{
+										fontFamily: 'mon-b',
+										fontSize: 22
+									}}
+								>
+									{firstName} {lastName}
+								</Text>
+							</View>
+						)}
+					</View>
 				</View>
 			)}
 
@@ -111,5 +127,12 @@ const styles = StyleSheet.create({
 		height: 100,
 		borderRadius: 50,
 		backgroundColor: Colors.grey
+	},
+	editRow: {
+		flex: 1,
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
+		gap: 8
 	}
 })
