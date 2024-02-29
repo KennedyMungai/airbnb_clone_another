@@ -58,7 +58,7 @@ const ListingDetailsPage = () => {
 						<Ionicons
 							name='share-outline'
 							size={22}
-							color={'#000'}
+							color={'black'}
 						/>
 					</TouchableOpacity>
 					<TouchableOpacity
@@ -68,7 +68,7 @@ const ListingDetailsPage = () => {
 						<Ionicons
 							name='heart-outline'
 							size={22}
-							color={'#000'}
+							color={'black'}
 						/>
 					</TouchableOpacity>
 				</View>
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
 		width: 40,
 		height: 40,
 		borderRadius: 50,
-		backgroundColor: 'white',
+		backgroundColor: '#FFFFFF25',
 		alignItems: 'center',
 		justifyContent: 'center',
 		color: Colors.primary,
