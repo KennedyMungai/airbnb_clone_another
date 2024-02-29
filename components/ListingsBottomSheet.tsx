@@ -16,7 +16,9 @@ const ListingsBottomSheet = ({ category, listings }: Props) => {
 	const bottomSheetRef = useRef<BottomSheet>(null)
 	const snapPoints = useMemo(() => ['10%', '100%'], [])
 
-	const showMap = () => {}
+	const showMap = () => {
+		bottomSheetRef.current?.collapse()
+	}
 
 	return (
 		<BottomSheet
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
 	sheetContainer: {
 		backgroundColor: 'white',
 		elevation: 4,
+		borderRadius: 10,
 		shadowColor: '#000',
 		shadowOpacity: 0.3,
 		shadowRadius: 4,
