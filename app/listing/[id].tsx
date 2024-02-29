@@ -3,11 +3,12 @@ import Colors from '@/constants/Colors'
 import { defaultStyles } from '@/constants/Styles'
 import { Listing } from '@/interfaces/listing'
 import { Ionicons } from '@expo/vector-icons'
-import { Stack, useLocalSearchParams } from 'expo-router'
-import React from 'react'
+import { Stack, useLocalSearchParams, useNavigation } from 'expo-router'
+import React, { useLayoutEffect } from 'react'
 import {
 	Dimensions,
 	Image,
+	Share,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
@@ -29,10 +30,42 @@ const { width } = Dimensions.get('window')
 const ListingDetailsPage = () => {
 	const { id } = useLocalSearchParams<{ id: string }>()
 	const listing = (listingsData as Listing[]).find((item) => item.id === id)
+	const navigation = useNavigation()
 
 	const scrollRef = useAnimatedRef<Animated.ScrollView>()
 
 	const scrollOffset = useScrollViewOffset(scrollRef)
+
+	const shareListing = async () => {
+		try {
+			await Share.share({
+				title: listing!.name,
+				url: listing!.listing_url
+			})
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			headerRight: () => (
+				<View style={styles.bar}>
+					<TouchableOpacity
+						style={styles.roundButton}
+						onPress={shareListing}
+					>
+						<Ionicons
+							name='share-outline'
+							size={22}
+							color={'#000'}
+						/>
+					</TouchableOpacity>
+					<TouchableOpacity></TouchableOpacity>
+				</View>
+			)
+		})
+	}, [])
 
 	const imageAnimatedStyle = useAnimatedStyle(() => {
 		return {
