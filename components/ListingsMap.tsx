@@ -17,6 +17,24 @@ const ListingsMap = ({ listings }: Props) => {
 		router.push(`/listing/${item.properties.id}`)
 	}
 
+	const renderCluster = (cluster: any) => {
+		const { id, geometry, onPress, properties } = cluster
+
+		const points = properties.points_count
+
+		return (
+			<Marker
+				key={`cluster-${id}`}
+				coordinate={{
+					longitude: geometry.coordinates[0],
+					latitude: geometry.coordinates[1]
+				}}
+			>
+				<View>Test</View>
+			</Marker>
+		)
+	}
+
 	return (
 		<View style={defaultStyles.container}>
 			<MapView
@@ -27,6 +45,7 @@ const ListingsMap = ({ listings }: Props) => {
 				clusterColor='#FFF'
 				clusterTextColor='#000'
 				clusterFontFamily='mon-sb'
+				renderCluster={renderCluster}
 			>
 				{listings.features.map((item, index) => (
 					<Marker
