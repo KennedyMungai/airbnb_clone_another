@@ -12,20 +12,21 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
-import Animated, {
-	FadeIn,
-	FadeInRight,
-	FadeOutLeft
-} from 'react-native-reanimated'
+import Animated, { FadeInRight, FadeOutLeft } from 'react-native-reanimated'
 
 type Props = {
 	listings: any[]
 	category: string
+	refresh: number
 }
 
-const Listings = ({ category, listings: items }: Props) => {
+const Listings = ({ category, listings: items, refresh }: Props) => {
 	const [loading, setLoading] = useState(false)
 	const listRef = useRef<FlatList>(null)
+
+	useEffect(() => {
+		console.log('REFRESH LISTINGS')
+	}, [refresh])
 
 	useEffect(() => {
 		setLoading(true)
