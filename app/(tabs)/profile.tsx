@@ -32,7 +32,9 @@ const Profile = () => {
 		setEmail(user.emailAddresses[0].emailAddress)
 	}, [user])
 
-	const onSaveUser = async () => {}
+	const onSaveUser = async () => {
+		setEdit(false)
+	}
 
 	const onCaptureImage = async () => {}
 
