@@ -72,6 +72,14 @@ const ListingDetailsPage = () => {
 						/>
 					</TouchableOpacity>
 				</View>
+			),
+			headerLeft: () => (
+				<TouchableOpacity
+					style={styles.roundButton}
+					onPress={() => navigation.goBack()}
+				>
+					<Ionicons name='chevron-back' size={24} color={'black'} />
+				</TouchableOpacity>
 			)
 		})
 	}, [])
