@@ -24,6 +24,7 @@ const ListingsMap = ({ listings }: Props) => {
 				provider='google'
 				showsUserLocation
 				showsMyLocationButton
+				clusterColor='#FFF'
 			>
 				{listings.features.map((item, index) => (
 					<Marker
