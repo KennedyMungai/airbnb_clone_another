@@ -43,6 +43,12 @@ const Profile = () => {
 				/>
 			)}
 
+			{!isSignedIn && (
+				<Link href={'/(modals)/login'} asChild>
+					<Button title='Log In' color={Colors.dark} />
+				</Link>
+			)}
+
 			<Button title='Log Out' onPress={() => signOut()} />
 			{!isSignedIn && (
 				<Link href={'/(modals)/login'}>
