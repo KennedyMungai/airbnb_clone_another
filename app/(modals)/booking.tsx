@@ -211,7 +211,15 @@ const BookingModal = () => {
 						</Animated.Text>
 						<Animated.View style={styles.cardBody}>
 							{groups.map((item, index) => (
-								<View key={index} style={styles.guestItem}>
+								<View
+									key={index}
+									style={[
+										styles.guestItem,
+										index + 1 < guestsGroups.length
+											? styles.itemBorder
+											: null
+									]}
+								>
 									<View>
 										<Text
 											style={{
