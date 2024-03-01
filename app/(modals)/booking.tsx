@@ -50,7 +50,7 @@ const BookingModal = () => {
 						onPress={() => router.back()}
 						style={[
 							defaultStyles.btn,
-							{ paddingRight: 50, paddingLeft: 20 }
+							{ paddingRight: 20, paddingLeft: 50 }
 						]}
 					>
 						<Ionicons
