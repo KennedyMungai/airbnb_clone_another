@@ -24,8 +24,8 @@ const ModalHeaderText = () => {
 			<TouchableOpacity onPress={() => setActive(1)}>
 				<Text
 					style={{
-						color: active === 0 ? '#000' : Colors.grey,
-						textDecorationLine: active === 0 ? 'underline' : 'none'
+						color: active === 1 ? '#000' : Colors.grey,
+						textDecorationLine: active === 1 ? 'underline' : 'none'
 					}}
 				>
 					Experiences
