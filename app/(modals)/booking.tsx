@@ -45,6 +45,12 @@ const BookingModal = () => {
 						<Text style={styles.previewDate}>I'm Flexible</Text>
 					</AnimatedTouchableOpacity>
 				)}
+
+				{openCard === 0 && (
+					<>
+						<Text style={styles.cardHeader}>Where to?</Text>
+					</>
+				)}
 			</View>
 
 			{/* When */}
@@ -60,6 +66,12 @@ const BookingModal = () => {
 						<Text style={styles.previewDate}>Any Week</Text>
 					</AnimatedTouchableOpacity>
 				)}
+
+				{openCard === 1 && (
+					<>
+						<Text style={styles.cardHeader}>Where to?</Text>
+					</>
+				)}
 			</View>
 
 			{/* Who */}
@@ -74,6 +86,12 @@ const BookingModal = () => {
 						<Text style={styles.previewText}>Who</Text>
 						<Text style={styles.previewDate}>Add guests</Text>
 					</AnimatedTouchableOpacity>
+				)}
+
+				{openCard === 2 && (
+					<>
+						<Text style={styles.cardHeader}>Where to?</Text>
+					</>
 				)}
 			</View>
 
@@ -158,6 +176,11 @@ const styles = StyleSheet.create({
 	cardPreview: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
+		padding: 20
+	},
+	cardHeader: {
+		fontFamily: 'mon_sb',
+		fontSize: 24,
 		padding: 20
 	}
 })
