@@ -32,11 +32,32 @@ const BookingModal = () => {
 				}}
 			/>
 
+			{/* Where */}
 			<View style={styles.card}>
 				{openCard !== 0 && (
 					<AnimatedTouchableOpacity onPress={() => setOpenCard(0)}>
 						<Text style={styles.previewText}>Where</Text>
 						<Text style={styles.previewDate}>I'm Flexible</Text>
+					</AnimatedTouchableOpacity>
+				)}
+			</View>
+
+			{/* When */}
+			<View style={styles.card}>
+				{openCard !== 1 && (
+					<AnimatedTouchableOpacity onPress={() => setOpenCard(1)}>
+						<Text style={styles.previewText}>When</Text>
+						<Text style={styles.previewDate}>Any Week</Text>
+					</AnimatedTouchableOpacity>
+				)}
+			</View>
+
+			{/* Who */}
+			<View style={styles.card}>
+				{openCard !== 2 && (
+					<AnimatedTouchableOpacity onPress={() => setOpenCard(2)}>
+						<Text style={styles.previewText}>Who</Text>
+						<Text style={styles.previewDate}>Add guests</Text>
 					</AnimatedTouchableOpacity>
 				)}
 			</View>
