@@ -258,7 +258,6 @@ const styles = StyleSheet.create({
 	},
 	cardBody: {
 		paddingHorizontal: 20,
-		paddingBottom: 20
 	},
 	searchSection: {
 		height: 50,
