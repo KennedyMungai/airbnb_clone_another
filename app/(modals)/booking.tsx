@@ -47,9 +47,9 @@ const BookingModal = () => {
 				)}
 
 				{openCard === 0 && (
-					<>
+					<Animated.View>
 						<Text style={styles.cardHeader}>Where to?</Text>
-					</>
+					</Animated.View>
 				)}
 			</View>
 
@@ -68,9 +68,9 @@ const BookingModal = () => {
 				)}
 
 				{openCard === 1 && (
-					<>
+					<Animated.View>
 						<Text style={styles.cardHeader}>When's your trip?</Text>
-					</>
+					</Animated.View>
 				)}
 			</View>
 
@@ -89,9 +89,9 @@ const BookingModal = () => {
 				)}
 
 				{openCard === 2 && (
-					<>
+					<Animated.View>
 						<Text style={styles.cardHeader}>Who's Coming</Text>
-					</>
+					</Animated.View>
 				)}
 			</View>
 
