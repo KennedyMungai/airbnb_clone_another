@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { Stack, useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { FadeIn, FadeOut, SlideInDown } from 'react-native-reanimated'
 
@@ -55,7 +55,21 @@ const BookingModal = () => {
 						>
 							Where to?
 						</Animated.Text>
-						<Animated.View style={styles.cardBody}></Animated.View>
+						<Animated.View style={styles.cardBody}>
+							<View style={styles.searchSection}>
+								<Ionicons
+									name='search-outline'
+									size={20}
+									color={'black'}
+									style={styles.searchIcon}
+								/>
+								<TextInput
+									style={styles.inputField}
+									placeholder='Search Destination'
+									placeholderTextColor={Colors.grey}
+								/>
+							</View>
+						</Animated.View>
 					</>
 				)}
 			</View>
@@ -83,7 +97,9 @@ const BookingModal = () => {
 						>
 							When's your trip?
 						</Animated.Text>
-						<Animated.View style={styles.cardBody}></Animated.View>
+						<Animated.View style={styles.cardBody}>
+							<View></View>
+						</Animated.View>
 					</>
 				)}
 			</View>
@@ -111,7 +127,9 @@ const BookingModal = () => {
 						>
 							Who's Coming
 						</Animated.Text>
-						<Animated.View style={styles.cardBody}></Animated.View>
+						<Animated.View style={styles.cardBody}>
+							<View></View>
+						</Animated.View>
 					</>
 				)}
 			</View>
@@ -207,5 +225,22 @@ const styles = StyleSheet.create({
 	cardBody: {
 		paddingHorizontal: 20,
 		paddingBottom: 20
+	},
+	searchSection: {
+		height: 50,
+		flexDirection: 'row',
+		borderColor: 'black',
+		borderRadius: 8,
+		borderWidth: StyleSheet.hairlineWidth,
+		backgroundColor: 'white',
+		alignContent: 'center',
+		alignItems: 'center',
+		marginBottom: 16
+	},
+	inputField: {
+		flex: 1
+	},
+	searchIcon: {
+		padding: 10
 	}
 })
