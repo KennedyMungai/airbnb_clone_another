@@ -63,13 +63,15 @@ const Profile = () => {
 					</TouchableOpacity>
 					<View style={{ flexDirection: 'row', gap: 6 }}>
 						{edit ? (
-							<TouchableOpacity onPress={onSaveUser}>
-								<Ionicons
-									name='checkmark-outline'
-									size={24}
-									color={Colors.dark}
-								/>
-							</TouchableOpacity>
+							<View style={styles.editRow}>
+								<TouchableOpacity onPress={onSaveUser}>
+									<Ionicons
+										name='checkmark-outline'
+										size={24}
+										color={Colors.dark}
+									/>
+								</TouchableOpacity>
+							</View>
 						) : (
 							<View style={styles.editRow}>
 								<Text
