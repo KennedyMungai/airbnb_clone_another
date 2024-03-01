@@ -11,6 +11,7 @@ import {
 	SafeAreaView,
 	StyleSheet,
 	Text,
+	TextInput,
 	TouchableOpacity,
 	View
 } from 'react-native'
@@ -64,6 +65,12 @@ const Profile = () => {
 					<View style={{ flexDirection: 'row', gap: 6 }}>
 						{edit ? (
 							<View style={styles.editRow}>
+								<TextInput
+									placeholder='First Name'
+									value={firstName || ''}
+									onChangeText={setFirstName}
+									style={defaultStyles.inputField}
+								/>
 								<TouchableOpacity onPress={onSaveUser}>
 									<Ionicons
 										name='checkmark-outline'
