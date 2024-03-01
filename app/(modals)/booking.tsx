@@ -1,10 +1,17 @@
 import ModalHeaderText from '@/components/ModalHeaderText'
+import { defaultStyles } from '@/constants/Styles'
 import { BlurView } from 'expo-blur'
-import { Stack } from 'expo-router'
+import { Stack, useRouter } from 'expo-router'
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import Animated, { SlideInDown } from 'react-native-reanimated'
 
 const BookingModal = () => {
+	const router = useRouter()
+
+	const onClearAll = () => {}
+
 	return (
 		<BlurView style={styles.container} intensity={70} tint={'light'}>
 			<Stack.Screen
@@ -13,7 +20,30 @@ const BookingModal = () => {
 					headerTitle: () => <ModalHeaderText />
 				}}
 			/>
-			<Text>BookingModal</Text>
+			<Animated.View
+				style={defaultStyles.footer}
+				entering={SlideInDown.delay(200)}
+			>
+				<View
+					style={{
+						flexDirection: 'row',
+						justifyContent: 'space-between',
+						alignItems: 'center'
+					}}
+				>
+					<TouchableOpacity onPress={onClearAll}>
+						<Text
+							style={{
+								fontSize: 18,
+								fontFamily: 'mon_sb',
+								textDecorationLine: 'underline'
+							}}
+						>
+							Clear All
+						</Text>
+					</TouchableOpacity>
+				</View>
+			</Animated.View>
 		</BlurView>
 	)
 }
