@@ -15,6 +15,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import * as ImagePicker from 'expo-image-picker'
 
 const Profile = () => {
 	const { signOut, isSignedIn } = useAuth()
@@ -48,7 +49,21 @@ const Profile = () => {
 		}
 	}
 
-	const onCaptureImage = async () => {}
+	const onCaptureImage = async () => {
+		const result = await ImagePicker.launchImageLibraryAsync({
+			mediaTypes: ImagePicker.MediaTypeOptions.Images,
+			allowsEditing: true,
+			quality: 0.75,
+			base64: true
+		})
+
+		if (!result.canceled) {
+			const base64 = `data:image/png;base64,${result.assets[0].base64}`
+			user?.setProfileImage({
+				file: base64
+			})
+		}
+	}
 
 	return (
 		<SafeAreaView style={defaultStyles.container}>
