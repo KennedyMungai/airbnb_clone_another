@@ -81,6 +81,7 @@ const BookingModal = () => {
 							<ScrollView
 								horizontal
 								showsHorizontalScrollIndicator={false}
+								contentContainerStyle={{gap: 25}}
 							>
 								{places.map((place, index) => (
 									<TouchableOpacity
