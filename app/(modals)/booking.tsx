@@ -77,30 +77,29 @@ const BookingModal = () => {
 									placeholderTextColor={Colors.grey}
 								/>
 							</View>
-
-							<ScrollView
-								horizontal
-								showsHorizontalScrollIndicator={false}
-								contentContainerStyle={{gap: 25}}
-							>
-								{places.map((place, index) => (
-									<TouchableOpacity
-										key={index}
-										onPress={() => setSelectedPlace(index)}
-									>
-										<Image
-											source={place.img}
-											style={
-												selectedPlace === index
-													? styles.placeSelected
-													: styles.place
-											}
-										/>
-										<Text>{place.title}</Text>
-									</TouchableOpacity>
-								))}
-							</ScrollView>
 						</Animated.View>
+						<ScrollView
+							horizontal
+							showsHorizontalScrollIndicator={false}
+							contentContainerStyle={{ gap: 25 }}
+						>
+							{places.map((place, index) => (
+								<TouchableOpacity
+									key={index}
+									onPress={() => setSelectedPlace(index)}
+								>
+									<Image
+										source={place.img}
+										style={
+											selectedPlace === index
+												? styles.placeSelected
+												: styles.place
+										}
+									/>
+									<Text>{place.title}</Text>
+								</TouchableOpacity>
+							))}
+						</ScrollView>
 					</>
 				)}
 			</View>
