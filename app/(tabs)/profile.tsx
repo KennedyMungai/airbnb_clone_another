@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
 	},
 	editRow: {
 		flex: 1,
+		height: 60,
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'center',
