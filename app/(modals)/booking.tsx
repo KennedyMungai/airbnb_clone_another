@@ -277,7 +277,6 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white',
 		alignContent: 'center',
 		alignItems: 'center',
-		marginBottom: 10
 	},
 	inputField: {
 		flex: 1,
