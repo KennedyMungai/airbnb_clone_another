@@ -1,5 +1,6 @@
 import ModalHeaderText from '@/components/ModalHeaderText'
 import { defaultStyles } from '@/constants/Styles'
+import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { Stack, useRouter } from 'expo-router'
 import React from 'react'
@@ -31,7 +32,10 @@ const BookingModal = () => {
 						alignItems: 'center'
 					}}
 				>
-					<TouchableOpacity onPress={onClearAll}>
+					<TouchableOpacity
+						onPress={onClearAll}
+						style={{ justifyContent: 'center' }}
+					>
 						<Text
 							style={{
 								fontSize: 18,
@@ -41,6 +45,21 @@ const BookingModal = () => {
 						>
 							Clear All
 						</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						onPress={() => router.back()}
+						style={[
+							defaultStyles.btn,
+							{ paddingRight: 50, paddingLeft: 20 }
+						]}
+					>
+						<Ionicons
+							name='search-outline'
+							size={24}
+							color={'white'}
+							style={defaultStyles.btnIcon}
+						/>
+						<Text style={defaultStyles.btnText}>Clear All</Text>
 					</TouchableOpacity>
 				</View>
 			</Animated.View>
