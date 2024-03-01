@@ -17,6 +17,9 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { FadeIn, FadeOut, SlideInDown } from 'react-native-reanimated'
 
+// @ts-ignore
+import DatePicker from 'react-native-modern-datepicker'
+
 const AnimatedTouchableOpacity =
 	Animated.createAnimatedComponent(TouchableOpacity)
 
