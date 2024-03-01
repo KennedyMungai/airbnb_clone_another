@@ -35,7 +35,10 @@ const BookingModal = () => {
 			{/* Where */}
 			<View style={styles.card}>
 				{openCard !== 0 && (
-					<AnimatedTouchableOpacity onPress={() => setOpenCard(0)}>
+					<AnimatedTouchableOpacity
+						onPress={() => setOpenCard(0)}
+						style={styles.cardPreview}
+					>
 						<Text style={styles.previewText}>Where</Text>
 						<Text style={styles.previewDate}>I'm Flexible</Text>
 					</AnimatedTouchableOpacity>
@@ -45,7 +48,10 @@ const BookingModal = () => {
 			{/* When */}
 			<View style={styles.card}>
 				{openCard !== 1 && (
-					<AnimatedTouchableOpacity onPress={() => setOpenCard(1)}>
+					<AnimatedTouchableOpacity
+						onPress={() => setOpenCard(1)}
+						style={styles.cardPreview}
+					>
 						<Text style={styles.previewText}>When</Text>
 						<Text style={styles.previewDate}>Any Week</Text>
 					</AnimatedTouchableOpacity>
@@ -55,7 +61,10 @@ const BookingModal = () => {
 			{/* Who */}
 			<View style={styles.card}>
 				{openCard !== 2 && (
-					<AnimatedTouchableOpacity onPress={() => setOpenCard(2)}>
+					<AnimatedTouchableOpacity
+						onPress={() => setOpenCard(2)}
+						style={styles.cardPreview}
+					>
 						<Text style={styles.previewText}>Who</Text>
 						<Text style={styles.previewDate}>Add guests</Text>
 					</AnimatedTouchableOpacity>
@@ -139,5 +148,10 @@ const styles = StyleSheet.create({
 		fontFamily: 'mon_sb',
 		fontSize: 14,
 		color: Colors.dark
+	},
+	cardPreview: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		padding: 20
 	}
 })
