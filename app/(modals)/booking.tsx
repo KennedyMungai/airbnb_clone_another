@@ -1,4 +1,5 @@
 import ModalHeaderText from '@/components/ModalHeaderText'
+import Colors from '@/constants/Colors'
 import { defaultStyles } from '@/constants/Styles'
 import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
@@ -7,6 +8,9 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { SlideInDown } from 'react-native-reanimated'
+
+const AnimatedTouchableOpacity =
+	Animated.createAnimatedComponent(TouchableOpacity)
 
 const BookingModal = () => {
 	const router = useRouter()
@@ -27,6 +31,17 @@ const BookingModal = () => {
 					headerTitle: () => <ModalHeaderText />
 				}}
 			/>
+
+			<View style={styles.card}>
+				{openCard !== 0 && (
+					<AnimatedTouchableOpacity onPress={() => setOpenCard(0)}>
+						<Text style={styles.previewText}>Where</Text>
+						<Text style={styles.previewDate}>I'm Flexible</Text>
+					</AnimatedTouchableOpacity>
+				)}
+			</View>
+
+			{/* Footer */}
 			<Animated.View
 				style={defaultStyles.footer}
 				entering={SlideInDown.delay(200)}
@@ -93,5 +108,15 @@ const styles = StyleSheet.create({
 			height: 2
 		},
 		gap: 20
+	},
+	previewText: {
+		fontFamily: 'mon_sb',
+		fontSize: 14,
+		color: Colors.grey
+	},
+	previewDate: {
+		fontFamily: 'mon_sb',
+		fontSize: 14,
+		color: Colors.dark
 	}
 })
