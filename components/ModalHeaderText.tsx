@@ -3,7 +3,7 @@ import React from 'react'
 
 const ModalHeaderText = () => {
 	return (
-		<View>
+		<View style={{ flexDirection: 'row', justifyContent: 'center' }}>
 			<Text>ModalHeaderText</Text>
 		</View>
 	)
