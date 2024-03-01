@@ -6,7 +6,7 @@ import { StyleSheet, Text } from 'react-native'
 
 const BookingModal = () => {
 	return (
-		<BlurView style={styles.container} intensity={70}>
+		<BlurView style={styles.container} intensity={70} tint={'light'}>
 			<Stack.Screen
 				options={{
 					headerTransparent: true,
