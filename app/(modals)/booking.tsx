@@ -3,13 +3,16 @@ import { defaultStyles } from '@/constants/Styles'
 import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { Stack, useRouter } from 'expo-router'
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { SlideInDown } from 'react-native-reanimated'
 
 const BookingModal = () => {
 	const router = useRouter()
+
+	const [openCard, setOpenCard] = useState(0)
+	const [selectedPlace, setSelectedPlace] = useState(0)
 
 	const onClearAll = () => {}
 
