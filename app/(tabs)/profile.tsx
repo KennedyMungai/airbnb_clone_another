@@ -34,7 +34,18 @@ const Profile = () => {
 	}, [user])
 
 	const onSaveUser = async () => {
-		setEdit(false)
+		if (!firstName || !lastName) return
+
+		try {
+			await user?.update({
+				firstName,
+				lastName
+			})
+		} catch (error: any) {
+			console.error(error.Message)
+		} finally {
+			setEdit(false)
+		}
 	}
 
 	const onCaptureImage = async () => {}
