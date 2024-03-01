@@ -1,10 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 
 const ModalHeaderText = () => {
+	const [active, setActive] = useState(0)
+
 	return (
 		<View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-			<Text>ModalHeaderText</Text>
+			<TouchableOpacity onPress={() => setActive(0)}>
+				<Text>Stays</Text>
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => setActive(1)}>
+				<Text>Experiences</Text>
+			</TouchableOpacity>
 		</View>
 	)
 }
