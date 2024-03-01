@@ -1,11 +1,12 @@
 import ModalHeaderText from '@/components/ModalHeaderText'
+import { BlurView } from 'expo-blur'
 import { Stack } from 'expo-router'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 
 const BookingModal = () => {
 	return (
-		<View>
+		<BlurView style={styles.container} intensity={70}>
 			<Stack.Screen
 				options={{
 					headerTransparent: true,
@@ -13,8 +14,14 @@ const BookingModal = () => {
 				}}
 			/>
 			<Text>BookingModal</Text>
-		</View>
+		</BlurView>
 	)
 }
 
 export default BookingModal
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1
+	}
+})
