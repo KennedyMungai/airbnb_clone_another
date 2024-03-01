@@ -1,3 +1,4 @@
+import { places } from '@/assets/data/places'
 import ModalHeaderText from '@/components/ModalHeaderText'
 import Colors from '@/constants/Colors'
 import { defaultStyles } from '@/constants/Styles'
@@ -5,7 +6,14 @@ import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { Stack, useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import {
+	Image,
+	ScrollView,
+	StyleSheet,
+	Text,
+	TextInput,
+	View
+} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { FadeIn, FadeOut, SlideInDown } from 'react-native-reanimated'
 
@@ -69,6 +77,28 @@ const BookingModal = () => {
 									placeholderTextColor={Colors.grey}
 								/>
 							</View>
+
+							<ScrollView
+								horizontal
+								showsHorizontalScrollIndicator={false}
+							>
+								{places.map((place, index) => (
+									<TouchableOpacity
+										key={index}
+										onPress={() => setSelectedPlace(index)}
+									>
+										<Image
+											source={place.img}
+											style={
+												selectedPlace === index
+													? styles.placeSelected
+													: styles.place
+											}
+										/>
+										<Text>{place.title}</Text>
+									</TouchableOpacity>
+								))}
+							</ScrollView>
 						</Animated.View>
 					</>
 				)}
@@ -244,5 +274,16 @@ const styles = StyleSheet.create({
 	},
 	searchIcon: {
 		padding: 10
+	},
+	place: {
+		width: 100,
+		height: 100,
+		borderRadius: 10
+	},
+	placeSelected: {
+		width: 100,
+		height: 100,
+		borderRadius: 10,
+		borderWidth: StyleSheet.hairlineWidth
 	}
 })
