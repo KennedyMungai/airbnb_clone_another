@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
 		padding: 20
 	},
 	cardBody: {
-		paddingHorizontal: 20,
+		paddingHorizontal: 20
 	},
 	searchSection: {
 		height: 50,
@@ -279,13 +279,13 @@ const styles = StyleSheet.create({
 		padding: 10
 	},
 	place: {
-		width: 100,
-		height: 100,
+		width: 120,
+		height: 120,
 		borderRadius: 10
 	},
 	placeSelected: {
-		width: 100,
-		height: 100,
+		width: 120,
+		height: 120,
 		borderRadius: 10,
 		borderWidth: 2,
 		borderColor: Colors.grey
