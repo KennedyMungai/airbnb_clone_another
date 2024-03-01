@@ -227,7 +227,11 @@ const BookingModal = () => {
 										<TouchableOpacity
 											onPress={() => {
 												const newGroups = [...groups]
-												newGroups[index].count--
+												newGroups[index].count =
+													newGroups[index].count > 0
+														? newGroups[index]
+																.count--
+														: 0
 												setGroups(newGroups)
 											}}
 										>
