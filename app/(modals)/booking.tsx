@@ -238,7 +238,9 @@ const styles = StyleSheet.create({
 		marginBottom: 16
 	},
 	inputField: {
-		flex: 1
+		flex: 1,
+		padding: 10,
+		backgroundColor: 'white'
 	},
 	searchIcon: {
 		padding: 10
