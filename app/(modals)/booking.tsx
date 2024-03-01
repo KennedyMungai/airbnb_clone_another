@@ -29,6 +29,8 @@ const BookingModal = () => {
 	const [openCard, setOpenCard] = useState(0)
 	const [selectedPlace, setSelectedPlace] = useState(0)
 
+	const today = new Date().toISOString().substring(0, 10)
+
 	const onClearAll = () => {
 		setSelectedPlace(0)
 		setOpenCard(0)
@@ -144,7 +146,17 @@ const BookingModal = () => {
 							When's your trip?
 						</Animated.Text>
 						<Animated.View style={styles.cardBody}>
-							<View></View>
+							<DatePicker
+								current={today}
+								selected={today}
+								mode={'calendar'}
+								options={{
+									defaultFont: 'mon',
+									headerFont: 'mon-sb',
+									borderColor: 'transparent',
+									mainColor: Colors.primary
+								}}
+							/>
 						</Animated.View>
 					</>
 				)}
@@ -279,7 +291,7 @@ const styles = StyleSheet.create({
 		borderWidth: StyleSheet.hairlineWidth,
 		backgroundColor: 'white',
 		alignContent: 'center',
-		alignItems: 'center',
+		alignItems: 'center'
 	},
 	inputField: {
 		flex: 1,
