@@ -213,8 +213,23 @@ const BookingModal = () => {
 							{groups.map((item, index) => (
 								<View key={index} style={styles.guestItem}>
 									<View>
-										<Text>{item.name}</Text>
-										<Text>{item.text}</Text>
+										<Text
+											style={{
+												fontFamily: 'mon-sb',
+												fontSize: 14
+											}}
+										>
+											{item.name}
+										</Text>
+										<Text
+											style={{
+												fontFamily: 'mon-sb',
+												fontSize: 14,
+												color: Colors.grey
+											}}
+										>
+											{item.text}
+										</Text>
 									</View>
 									<View
 										style={{
