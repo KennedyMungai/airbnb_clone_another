@@ -7,7 +7,7 @@ import { Stack, useRouter } from 'expo-router'
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import Animated, { SlideInDown } from 'react-native-reanimated'
+import Animated, { FadeIn, FadeOut, SlideInDown } from 'react-native-reanimated'
 
 const AnimatedTouchableOpacity =
 	Animated.createAnimatedComponent(TouchableOpacity)
@@ -38,6 +38,8 @@ const BookingModal = () => {
 					<AnimatedTouchableOpacity
 						onPress={() => setOpenCard(0)}
 						style={styles.cardPreview}
+						entering={FadeIn.duration(200)}
+						exiting={FadeOut.duration(200)}
 					>
 						<Text style={styles.previewText}>Where</Text>
 						<Text style={styles.previewDate}>I'm Flexible</Text>
@@ -51,6 +53,8 @@ const BookingModal = () => {
 					<AnimatedTouchableOpacity
 						onPress={() => setOpenCard(1)}
 						style={styles.cardPreview}
+						entering={FadeIn.duration(200)}
+						exiting={FadeOut.duration(200)}
 					>
 						<Text style={styles.previewText}>When</Text>
 						<Text style={styles.previewDate}>Any Week</Text>
@@ -64,6 +68,8 @@ const BookingModal = () => {
 					<AnimatedTouchableOpacity
 						onPress={() => setOpenCard(2)}
 						style={styles.cardPreview}
+						entering={FadeIn.duration(200)}
+						exiting={FadeOut.duration(200)}
 					>
 						<Text style={styles.previewText}>Who</Text>
 						<Text style={styles.previewDate}>Add guests</Text>
