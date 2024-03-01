@@ -100,7 +100,16 @@ const BookingModal = () => {
 												: styles.place
 										}
 									/>
-									<Text>{place.title}</Text>
+									<Text
+										style={[
+											{ paddingTop: 6 },
+											selectedPlace === index
+												? { fontFamily: 'mon-sb' }
+												: { fontFamily: 'mon' }
+										]}
+									>
+										{place.title}
+									</Text>
 								</TouchableOpacity>
 							))}
 						</ScrollView>
