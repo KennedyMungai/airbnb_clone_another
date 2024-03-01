@@ -47,7 +47,7 @@ const BookingModal = () => {
 				)}
 
 				{openCard === 0 && (
-					<Animated.View>
+					<>
 						<Animated.Text
 							entering={FadeIn}
 							exiting={FadeOut}
@@ -55,7 +55,8 @@ const BookingModal = () => {
 						>
 							Where to?
 						</Animated.Text>
-					</Animated.View>
+						<Animated.View style={styles.cardBody}></Animated.View>
+					</>
 				)}
 			</View>
 
@@ -74,7 +75,7 @@ const BookingModal = () => {
 				)}
 
 				{openCard === 1 && (
-					<Animated.View>
+					<>
 						<Animated.Text
 							entering={FadeIn}
 							exiting={FadeOut}
@@ -82,7 +83,8 @@ const BookingModal = () => {
 						>
 							When's your trip?
 						</Animated.Text>
-					</Animated.View>
+						<Animated.View style={styles.cardBody}></Animated.View>
+					</>
 				)}
 			</View>
 
@@ -101,7 +103,7 @@ const BookingModal = () => {
 				)}
 
 				{openCard === 2 && (
-					<Animated.View>
+					<>
 						<Animated.Text
 							entering={FadeIn}
 							exiting={FadeOut}
@@ -109,7 +111,8 @@ const BookingModal = () => {
 						>
 							Who's Coming
 						</Animated.Text>
-					</Animated.View>
+						<Animated.View style={styles.cardBody}></Animated.View>
+					</>
 				)}
 			</View>
 
@@ -200,5 +203,9 @@ const styles = StyleSheet.create({
 		fontFamily: 'mon_sb',
 		fontSize: 24,
 		padding: 20
+	},
+	cardBody: {
+		paddingHorizontal: 20,
+		paddingBottom: 20
 	}
 })
