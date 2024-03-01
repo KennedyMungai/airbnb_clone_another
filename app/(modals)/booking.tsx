@@ -69,7 +69,7 @@ const BookingModal = () => {
 
 				{openCard === 1 && (
 					<>
-						<Text style={styles.cardHeader}>Where to?</Text>
+						<Text style={styles.cardHeader}>When's your trip?</Text>
 					</>
 				)}
 			</View>
@@ -90,7 +90,7 @@ const BookingModal = () => {
 
 				{openCard === 2 && (
 					<>
-						<Text style={styles.cardHeader}>Where to?</Text>
+						<Text style={styles.cardHeader}>Who's Coming</Text>
 					</>
 				)}
 			</View>
