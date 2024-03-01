@@ -14,7 +14,10 @@ const BookingModal = () => {
 	const [openCard, setOpenCard] = useState(0)
 	const [selectedPlace, setSelectedPlace] = useState(0)
 
-	const onClearAll = () => {}
+	const onClearAll = () => {
+		setSelectedPlace(0)
+		setOpenCard(0)
+	}
 
 	return (
 		<BlurView style={styles.container} intensity={70} tint={'light'}>
@@ -76,5 +79,19 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		paddingTop: 100
+	},
+	card: {
+		backgroundColor: 'white',
+		borderRadius: 14,
+		margin: 10,
+		elevation: 4,
+		shadowColor: 'black',
+		shadowOpacity: 0.2,
+		shadowRadius: 0.4,
+		shadowOffset: {
+			width: 2,
+			height: 2
+		},
+		gap: 20
 	}
 })
