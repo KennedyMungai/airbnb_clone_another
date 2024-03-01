@@ -48,7 +48,13 @@ const BookingModal = () => {
 
 				{openCard === 0 && (
 					<Animated.View>
-						<Text style={styles.cardHeader}>Where to?</Text>
+						<Animated.Text
+							entering={FadeIn}
+							exiting={FadeOut}
+							style={styles.cardHeader}
+						>
+							Where to?
+						</Animated.Text>
 					</Animated.View>
 				)}
 			</View>
@@ -69,7 +75,13 @@ const BookingModal = () => {
 
 				{openCard === 1 && (
 					<Animated.View>
-						<Text style={styles.cardHeader}>When's your trip?</Text>
+						<Animated.Text
+							entering={FadeIn}
+							exiting={FadeOut}
+							style={styles.cardHeader}
+						>
+							When's your trip?
+						</Animated.Text>
 					</Animated.View>
 				)}
 			</View>
@@ -90,7 +102,13 @@ const BookingModal = () => {
 
 				{openCard === 2 && (
 					<Animated.View>
-						<Text style={styles.cardHeader}>Who's Coming</Text>
+						<Animated.Text
+							entering={FadeIn}
+							exiting={FadeOut}
+							style={styles.cardHeader}
+						>
+							Who's Coming
+						</Animated.Text>
 					</Animated.View>
 				)}
 			</View>
