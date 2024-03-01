@@ -69,7 +69,19 @@ const Profile = () => {
 									placeholder='First Name'
 									value={firstName || ''}
 									onChangeText={setFirstName}
-									style={[defaultStyles.inputField, {width: 100}]}
+									style={[
+										defaultStyles.inputField,
+										{ width: 100 }
+									]}
+								/>
+								<TextInput
+									placeholder='Last Name'
+									value={lastName || ''}
+									onChangeText={setLastName}
+									style={[
+										defaultStyles.inputField,
+										{ width: 100 }
+									]}
 								/>
 								<TouchableOpacity onPress={onSaveUser}>
 									<Ionicons
